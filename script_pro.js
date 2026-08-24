@@ -1,3 +1,17 @@
+/* -------------------------------------------------------------------------
+   CONTACT ROUTING
+
+   web3formsKey  Paste the free access key from https://web3forms.com here
+                 (enter sathishpp74@gmail.com there, the key arrives by email).
+                 Until it is set, the form will not pretend to send — it routes
+                 people to WhatsApp instead.
+   whatsapp      Shop number in international form, digits only.
+   ------------------------------------------------------------------------- */
+const CONTACT = {
+    web3formsKey: '',
+    whatsapp: '919865488055'
+};
+
 const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const FINE_POINTER = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
@@ -769,22 +783,105 @@ function initFormHandling() {
     const form = document.getElementById('contactForm');
     if (!form) return;
 
-    form.addEventListener('submit', e => {
+    const submitBtn = document.getElementById('formSubmit');
+    const waBtn = document.getElementById('formWhatsapp');
+    const configured = Boolean(CONTACT.web3formsKey);
+
+    if (!configured) {
+        // Never claim to have sent something we cannot send. With no email
+        // route, the primary action becomes WhatsApp and the duplicate
+        // secondary button is removed.
+        if (submitBtn) submitBtn.textContent = 'Send on WhatsApp';
+        if (waBtn) waBtn.remove();
+        const actions = form.querySelector('.form-actions');
+        if (actions) actions.classList.add('single');
+        console.warn('[contact] No Web3Forms key set — email disabled, form routes to WhatsApp. See CONTACT in script_pro.js.');
+    }
+
+    form.addEventListener('submit', async e => {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(form));
 
-        if (validateForm(data)) {
-            showNotification('Thank you — your message has reached us. We will get back to you shortly.', 'success');
-            form.reset();
-        } else {
+        if (data.botcheck) return;                       // spam trap tripped
+
+        if (!validateForm(data)) {
             showNotification('Please fill in your name, a valid email, and a message.', 'error');
+            return;
+        }
+
+        if (!configured) { sendToWhatsApp(form); return; }
+
+        const label = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({
+                    access_key: CONTACT.web3formsKey,
+                    subject: 'Website enquiry — ' + (data.name || 'no name'),
+                    from_name: 'P. S. Pichandi Chettiar website',
+                    name: data.name,
+                    email: data.email,
+                    phone: data.phone || '—',
+                    interest: data.interest || '—',
+                    message: data.message
+                })
+            });
+
+            const out = await res.json().catch(() => ({}));
+
+            if (res.ok && out.success) {
+                showNotification('Thank you — your message has reached us. We will reply shortly.', 'success');
+                form.reset();
+            } else {
+                throw new Error(out.message || 'Request failed');
+            }
+        } catch (err) {
+            showNotification('That did not send. Please try WhatsApp, or call +91 98654 88055.', 'error');
+            console.error('[contact]', err);
+        } finally {
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = label; }
         }
     });
+
+    if (waBtn) {
+        waBtn.addEventListener('click', () => sendToWhatsApp(form));
+    }
 
     form.querySelectorAll('input, textarea, select').forEach(input => {
         input.addEventListener('blur', () => validateField(input));
         input.addEventListener('input', () => { if (input.classList.contains('error')) validateField(input); });
     });
+}
+
+/* Hands the enquiry to WhatsApp with everything already typed out. */
+function sendToWhatsApp(form) {
+    const d = Object.fromEntries(new FormData(form));
+    const interest = form.querySelector('#interest');
+    const interestLabel = interest && interest.selectedIndex > 0
+        ? interest.options[interest.selectedIndex].text
+        : '';
+
+    if (!d.name || !d.name.trim() || !d.message || !d.message.trim()) {
+        showNotification('Please add your name and a message first.', 'error');
+        ['name', 'message'].forEach(f => {
+            const el = form.querySelector(`[name="${f}"]`);
+            if (el && !el.value.trim()) el.classList.add('error');
+        });
+        return;
+    }
+
+    const lines = ['Enquiry from your website', ''];
+    lines.push('Name: ' + d.name.trim());
+    if (d.phone && d.phone.trim()) lines.push('Phone: ' + d.phone.trim());
+    if (d.email && d.email.trim()) lines.push('Email: ' + d.email.trim());
+    if (interestLabel) lines.push('Looking for: ' + interestLabel);
+    lines.push('', d.message.trim());
+
+    const url = 'https://wa.me/' + CONTACT.whatsapp + '?text=' + encodeURIComponent(lines.join('\n'));
+    window.open(url, '_blank', 'noopener');
 }
 
 function validateForm(data) {

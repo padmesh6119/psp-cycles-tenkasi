@@ -773,7 +773,17 @@
                             </select>
                         </div>
                         <div class="form-group"><textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea></div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+
+                        <!-- spam trap: real people never fill this in -->
+                        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="formSubmit">Send Message</button>
+                            <button type="button" class="btn btn-whatsapp" id="formWhatsapp">
+                                <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+                            </button>
+                        </div>
+                        <p class="form-note">We reply on the same day the shop is open.</p>
                     </form>
                 </div>
             </div>

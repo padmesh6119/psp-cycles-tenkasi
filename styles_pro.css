@@ -2060,3 +2060,43 @@ h1, h2, h3, h4, h5 {
     .bloom-core::after { animation: none !important; }
     .bloom-rings circle { opacity: .85 !important; transform: none !important; }
 }
+
+/* ---------------------------- Contact form actions ---------------------- */
+.form-actions {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .7rem;
+    margin-top: .4rem;
+}
+
+.form-actions.single { grid-template-columns: 1fr; }
+.form-actions .btn { width: 100%; text-align: center; }
+
+.btn-whatsapp {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--rule-strong);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55rem;
+    white-space: nowrap;
+}
+
+.btn-whatsapp i { font-size: 1.05rem; color: #25d366; transition: color .35s var(--ease); }
+.btn-whatsapp:hover { background: #25d366; border-color: #25d366; color: #fff; transform: translateY(-2px); }
+.btn-whatsapp:hover i { color: #fff; }
+
+.btn:disabled { opacity: .55; cursor: wait; transform: none !important; }
+
+.form-note {
+    margin-top: 1rem;
+    font-size: .72rem;
+    letter-spacing: .04em;
+    color: var(--ink-4);
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .form-actions { grid-template-columns: 1fr; }
+}
