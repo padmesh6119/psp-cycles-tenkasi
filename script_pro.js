@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initReveal();
     initHero();
     initCounters();
+    initBloom();
     initArchiveStrip();
     initGallery();
     initTimelineDraw();
@@ -340,6 +341,116 @@ function animateCounter(el) {
     };
 
     requestAnimationFrame(step);
+}
+
+
+/* ================================== BLOOM ================================ */
+/* A single circular control that opens into a radial ring of every category. */
+function initBloom() {
+    const bloom = document.getElementById('bloom');
+    const stage = document.getElementById('bloomStage');
+    const core = document.getElementById('bloomCore');
+    const section = document.querySelector('.cycles-section');
+    const cards = Array.from(document.querySelectorAll('.category-card[data-slug]'));
+    if (!bloom || !stage || !core || !section || !cards.length) return;
+
+    section.classList.add('bloom-mode');
+
+    // Petals live in their own layer so the layout can switch from a ring
+    // to a grid on narrow screens without disturbing the core button.
+    const ring = document.createElement('div');
+    ring.className = 'bloom-ring';
+    stage.appendChild(ring);
+
+    // Build one petal per category, reusing each card's own image and title.
+    const nodes = cards.map(card => {
+        const slug = card.dataset.slug;
+        const img = card.querySelector('.cycle-image img');
+        const title = card.querySelector('h3');
+
+        const a = document.createElement('a');
+        a.className = 'bloom-node';
+        a.href = slug + '.html';
+        a.setAttribute('aria-label', title ? title.textContent.trim() : slug);
+        a.tabIndex = -1;
+        a.innerHTML =
+            '<span class="bloom-node-disc">' +
+                '<img src="' + (img ? img.getAttribute('src') : '') + '" alt="" loading="lazy">' +
+            '</span>' +
+            '<span class="bloom-node-label">' + (card.dataset.short || slug) + '</span>';
+
+        ring.appendChild(a);
+        return a;
+    });
+
+    // Lay the petals out on a circle, starting at twelve o'clock.
+    function layout() {
+        const r = parseFloat(getComputedStyle(bloom).getPropertyValue('--r')) || 290;
+        const step = (Math.PI * 2) / nodes.length;
+        nodes.forEach((node, i) => {
+            const angle = -Math.PI / 2 + step * i;
+            node.style.setProperty('--x', (Math.cos(angle) * r).toFixed(1) + 'px');
+            node.style.setProperty('--y', (Math.sin(angle) * r).toFixed(1) + 'px');
+        });
+    }
+
+    layout();
+    window.addEventListener('resize', debounce(layout, 150));
+
+    // Petals spring out from the top and around; they fold back in reverse.
+    function stagger(opening) {
+        nodes.forEach((node, i) => {
+            const order = opening ? i : nodes.length - 1 - i;
+            node.style.setProperty('--d', REDUCED ? '0s' : (order * 0.045).toFixed(3) + 's');
+        });
+    }
+
+    let open = false;
+
+    function setOpen(next) {
+        open = next;
+        stagger(open);
+        bloom.classList.toggle('open', open);
+        core.setAttribute('aria-expanded', String(open));
+        nodes.forEach(n => { n.tabIndex = open ? 0 : -1; });
+        if (open) {
+            const first = nodes[0];
+            if (first && FINE_POINTER === false) first.focus({ preventScroll: true });
+        }
+    }
+
+    core.addEventListener('click', () => setOpen(!open));
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && open) { setOpen(false); core.focus(); }
+    });
+
+    // Clicking outside the ring folds it back up.
+    document.addEventListener('click', e => {
+        if (!open) return;
+        if (stage.contains(e.target)) return;
+        if (e.target.closest('.bloom-grid-toggle')) return;
+        setOpen(false);
+    });
+
+    // Fallback view with the full feature lists.
+    const toggle = document.getElementById('bloomGridToggle');
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            const showing = section.classList.toggle('show-grid');
+            toggle.textContent = showing ? 'Back to the wheel' : 'See full specifications';
+            if (showing && open) setOpen(false);
+        });
+    }
+
+}
+
+function debounce(fn, ms) {
+    let t;
+    return function () {
+        clearTimeout(t);
+        t = setTimeout(fn, ms);
+    };
 }
 
 /* ------------------------------ Archive strip ---------------------------- */

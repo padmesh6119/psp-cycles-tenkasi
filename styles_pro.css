@@ -1726,3 +1726,337 @@ h1, h2, h3, h4, h5 {
     .cursor { display: none !important; }
     .page-wipe { display: none !important; }
 }
+
+/* ==========================================================================
+   BLOOM — circular category launcher
+   ========================================================================== */
+
+.bloom {
+    --r: 292px;
+    --node: 116px;
+    --stage: 780px;
+    --core: 168px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.bloom-stage {
+    position: relative;
+    width: 100%;
+    max-width: var(--stage);
+    height: var(--stage);
+    margin-inline: auto;
+    display: grid;
+    place-items: center;
+}
+
+/* --- guide rings --- */
+.bloom-rings {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.bloom-rings circle {
+    fill: none;
+    stroke: var(--rule-strong);
+    stroke-width: .35;
+    stroke-dasharray: 2 4;
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(.55) rotate(-30deg);
+    transition: opacity .8s var(--ease-out), transform 1.1s var(--ease-out);
+}
+
+.bloom-rings circle:nth-child(2) { transition-delay: .08s; }
+.bloom.open .bloom-rings circle { opacity: .85; transform: scale(1) rotate(0deg); }
+
+/* --- the core button --- */
+.bloom-core {
+    position: relative;
+    z-index: 3;
+    width: var(--core);
+    height: var(--core);
+    border-radius: 50%;
+    border: 1px solid var(--brass);
+    background: var(--ink);
+    color: var(--paper);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-family: var(--body);
+    overflow: hidden;
+    transition: transform .6s var(--ease-out), box-shadow .5s var(--ease), width .5s var(--ease-out), height .5s var(--ease-out);
+    box-shadow: 0 18px 50px rgba(20, 17, 15, .22);
+}
+
+.bloom-core::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--brass);
+    transform: scale(0);
+    transition: transform .55s var(--ease-out);
+}
+
+.bloom-core:hover::before { transform: scale(1); }
+.bloom-core:hover { color: var(--ink); border-color: var(--brass); }
+.bloom-core:focus-visible { outline: 2px solid var(--brass-hi); outline-offset: 6px; }
+
+/* pulsing halo invites the first click */
+.bloom-core::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    border: 1px solid var(--brass);
+    animation: corePulse 2.8s var(--ease-out) infinite;
+    pointer-events: none;
+}
+
+@keyframes corePulse {
+    0%   { transform: scale(1); opacity: .7; }
+    70%  { transform: scale(1.42); opacity: 0; }
+    100% { transform: scale(1.42); opacity: 0; }
+}
+
+.bloom.open .bloom-core::after { animation: none; opacity: 0; }
+.bloom.open .bloom-core { width: 116px; height: 116px; }
+
+.bloom-core-face {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    gap: .18rem;
+    transition: opacity .35s var(--ease), transform .5s var(--ease-out);
+}
+
+.bloom-core-face i { font-size: 1.5rem; color: var(--brass-hi); transition: color .4s var(--ease); }
+.bloom-core:hover .bloom-core-face i { color: var(--ink); }
+
+.bloom-core-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.bloom-core-sub { font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; opacity: .55; }
+
+.bloom-core-open { opacity: 0; transform: rotate(-90deg) scale(.6); }
+.bloom.open .bloom-core-shut { opacity: 0; transform: rotate(90deg) scale(.6); }
+.bloom.open .bloom-core-open { opacity: 1; transform: none; }
+
+/* --- the petals --- */
+.bloom-ring {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.bloom-node {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--node);
+    margin: calc(var(--node) / -2) 0 0 calc(var(--node) / -2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .55rem;
+    text-decoration: none;
+    color: var(--ink);
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translate3d(0, 0, 0) scale(.15) rotate(-40deg);
+    transition:
+        transform .78s cubic-bezier(.34, 1.4, .5, 1) var(--d, 0s),
+        opacity .45s var(--ease-out) var(--d, 0s),
+        visibility 0s linear .8s;
+}
+
+.bloom.open .bloom-ring { pointer-events: auto; }
+
+.bloom.open .bloom-node {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate3d(var(--x), var(--y), 0) scale(1) rotate(0deg);
+    transition:
+        transform .78s cubic-bezier(.34, 1.4, .5, 1) var(--d, 0s),
+        opacity .45s var(--ease-out) var(--d, 0s),
+        visibility 0s linear 0s;
+}
+
+.bloom-node-disc {
+    width: var(--node);
+    height: var(--node);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--rule-strong);
+    background: var(--paper-2);
+    box-shadow: 0 8px 26px rgba(20, 17, 15, .14);
+    transition: transform .45s var(--ease-out), border-color .35s var(--ease), box-shadow .45s var(--ease);
+}
+
+.bloom-node-disc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(.6) brightness(.95);
+    transition: filter .5s var(--ease), transform .8s var(--ease-out);
+}
+
+.bloom-node-disc::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 120%, rgba(20, 17, 15, .55), transparent 62%);
+    transition: opacity .4s var(--ease);
+}
+
+.bloom-node:hover .bloom-node-disc,
+.bloom-node:focus-visible .bloom-node-disc {
+    transform: scale(1.13);
+    border-color: var(--brass);
+    box-shadow: 0 14px 40px rgba(20, 17, 15, .26);
+}
+
+.bloom-node:hover .bloom-node-disc img { filter: none; transform: scale(1.09); }
+.bloom-node:hover .bloom-node-disc::after { opacity: .35; }
+.bloom-node:focus-visible { outline: none; }
+
+.bloom-node-label {
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    text-align: center;
+    white-space: nowrap;
+    transition: color .35s var(--ease), transform .35s var(--ease-out);
+}
+
+.bloom-node:hover .bloom-node-label { color: var(--brass); transform: translateY(2px); }
+
+/* --- supporting copy --- */
+.bloom-hint {
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+    transition: opacity .4s var(--ease);
+}
+
+.bloom.open .bloom-hint { opacity: 0; }
+
+.bloom-grid-toggle {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid var(--rule-strong);
+    color: var(--ink-3);
+    font-family: var(--body);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    padding: 0 0 4px;
+    cursor: pointer;
+    transition: color .3s var(--ease), border-color .3s var(--ease);
+}
+
+.bloom-grid-toggle:hover { color: var(--brass); border-color: var(--brass); }
+
+/* the detailed grid is the fallback view */
+.cycles-section.bloom-mode .cycle-categories { display: none; }
+.cycles-section.bloom-mode.show-grid .cycle-categories { display: grid; }
+.cycles-section.bloom-mode.show-grid .bloom-stage,
+.cycles-section.bloom-mode.show-grid .bloom-hint { display: none; }
+.cycles-section.bloom-mode.show-grid .bloom { margin-bottom: 2.6rem; }
+
+/* --- responsive --- */
+@media (max-width: 900px) {
+    .bloom { --r: 224px; --node: 92px; --stage: 600px; --core: 140px; }
+    .bloom.open .bloom-core { width: 96px; height: 96px; }
+}
+
+/* On a phone the ring cannot hold twelve petals without collisions,
+   so it blooms into a grid instead — same spring, same stagger. */
+@media (max-width: 620px) {
+    .bloom { --core: 116px; }
+
+    .bloom-stage {
+        height: auto;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bloom-rings { display: none; }
+    .bloom.open .bloom-core { width: 84px; height: 84px; }
+
+    .bloom-ring {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4rem .5rem;
+        width: 100%;
+        max-height: 0;
+        margin-top: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition:
+            max-height .7s var(--ease-out),
+            opacity .45s var(--ease-out),
+            margin-top .6s var(--ease-out);
+    }
+
+    .bloom.open .bloom-ring {
+        max-height: 820px;
+        opacity: 1;
+        margin-top: 2.4rem;
+    }
+
+    .bloom-node {
+        position: static;
+        width: auto;
+        margin: 0;
+        gap: .45rem;
+        transform: scale(.5);
+        transition:
+            transform .6s cubic-bezier(.34, 1.4, .5, 1) var(--d, 0s),
+            opacity .4s var(--ease-out) var(--d, 0s),
+            visibility 0s linear .7s;
+    }
+
+    .bloom.open .bloom-node {
+        transform: none;
+        transition:
+            transform .6s cubic-bezier(.34, 1.4, .5, 1) var(--d, 0s),
+            opacity .4s var(--ease-out) var(--d, 0s),
+            visibility 0s linear 0s;
+    }
+
+    .bloom-node-disc { width: 78px; height: 78px; }
+    .bloom-node-label { font-size: .54rem; letter-spacing: .1em; }
+    .bloom-core-face i { font-size: 1.2rem; }
+    .bloom-core-label { font-size: .6rem; }
+    .bloom-core-sub { font-size: .52rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bloom-core::after { animation: none !important; }
+    .bloom-rings circle { opacity: .85 !important; transform: none !important; }
+}
