@@ -2113,7 +2113,7 @@ h1, h2, h3, h4, h5 {
 
 .collection-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
     gap: 1px;
     background: var(--rule);
     border: 1px solid var(--rule);
@@ -2123,7 +2123,6 @@ h1, h2, h3, h4, h5 {
     background: #fffdf8;
     border: 0;
     border-radius: 0;
-    padding: 1.7rem 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -2143,48 +2142,59 @@ h1, h2, h3, h4, h5 {
     transform: scaleY(0);
     transform-origin: top;
     transition: transform .45s var(--ease-out);
+    z-index: 2;
 }
 
-.model-card:hover {
-    background: var(--paper);
-    transform: none;
-    box-shadow: none;
-    border-color: transparent;
-}
-
+.model-card:hover { background: var(--paper); transform: none; box-shadow: none; }
 .model-card:hover::before { transform: scaleY(1); }
 .model-card:focus-visible { outline: 2px solid var(--brass); outline-offset: -2px; }
 
+.model-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid var(--rule);
+}
+
+.model-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: .5rem;
+    transition: transform .7s var(--ease-out);
+}
+
+.model-card:hover .model-image img { transform: scale(1.07); }
+
+.model-info { display: flex; flex-direction: column; flex: 1; padding: 1.2rem 1.2rem 1.1rem; }
+
 .model-brand {
     display: block;
-    font-size: .58rem;
+    font-size: .56rem;
     font-weight: 700;
     letter-spacing: .2em;
     text-transform: uppercase;
     color: var(--brass);
-    margin-bottom: .55rem;
+    margin-bottom: .45rem;
 }
 
 .model-card h3 {
-    font-size: 1.06rem;
+    font-size: .98rem;
     font-weight: 600;
     color: var(--ink);
     line-height: 1.25;
     letter-spacing: -.01em;
-    margin-bottom: .45rem;
+    margin-bottom: .4rem;
 }
 
-.model-spec {
-    color: var(--ink-3);
-    font-size: .8rem;
-    line-height: 1.5;
-    margin-bottom: 1.1rem;
-}
+.model-spec { color: var(--ink-3); font-size: .76rem; line-height: 1.5; margin-bottom: .9rem; }
 
 .model-cta {
     margin-top: auto;
-    padding-top: .9rem;
-    font-size: .62rem;
+    padding-top: .8rem;
+    font-size: .6rem;
     font-weight: 700;
     letter-spacing: .18em;
     text-transform: uppercase;
@@ -2195,17 +2205,13 @@ h1, h2, h3, h4, h5 {
     transition: color .35s var(--ease);
 }
 
-.model-cta i { font-size: .62rem; transition: transform .4s var(--ease-out); }
+.model-cta i { font-size: .6rem; transition: transform .4s var(--ease-out); }
 .model-card:hover .model-cta { color: var(--brass); }
 .model-card:hover .model-cta i { transform: translateX(4px); }
 
 @media (max-width: 620px) {
     .collection-grid { grid-template-columns: 1fr 1fr; }
-    .model-card { padding: 1.3rem 1.1rem; }
-    .model-card h3 { font-size: .95rem; }
-    .model-spec { font-size: .74rem; }
-}
-
-@media (max-width: 380px) {
-    .collection-grid { grid-template-columns: 1fr; }
+    .model-info { padding: .9rem .85rem 1rem; }
+    .model-card h3 { font-size: .88rem; }
+    .model-spec { font-size: .7rem; }
 }
