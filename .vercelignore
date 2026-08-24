@@ -1,0 +1,5 @@
+# Source material — versioned in git, not needed by the deployed site.
+# The web-optimized derivatives live in heritage/.
+TENKASI_images/
+TENKASI P.S.P CYCLE.pdf
+.vscode/
