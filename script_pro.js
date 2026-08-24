@@ -140,6 +140,9 @@ function initSplitText() {
     }, { threshold: 0.25, rootMargin: '0px 0px -8% 0px' });
 
     targets.forEach(el => { if (el !== hero) observer.observe(el); });
+
+    // Fail-safe: text must never be left invisible if the observer misses.
+    setTimeout(() => targets.forEach(el => el.classList.add('split-in')), 2200);
 }
 
 /* ------------------------------- Hero ----------------------------------- */
@@ -304,6 +307,15 @@ function initReveal() {
     }, { threshold: 0.15 });
 
     wipes.forEach(el => wipeObserver.observe(el));
+
+    // Fail-safe: nothing stays hidden if an observer callback is missed.
+    setTimeout(() => {
+        items.forEach(el => {
+            el.classList.remove('reveal-init');
+            el.classList.add('reveal-in');
+        });
+        wipes.forEach(el => el.classList.add('in'));
+    }, 2600);
 }
 
 /* ----------------------------- Timeline draw ----------------------------- */
