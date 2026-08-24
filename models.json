@@ -1,262 +1,1323 @@
 {
-  "_note": "Model names gathered from manufacturer and Indian retailer catalogues (hercules.in, outdoors91.com, firefoxlife.com, emotorad.com, herolectro.com, machcity.com, bicyclesdekho.com, choosemybicycle.com, decathlon.in). Specs are only stated where the model name or catalogue listing gives them. No prices: confirm in store. Edit this file and run build_models.py to regenerate the collection pages.",
-
-  "mtb": [
-    { "brand": "Hercules Roadeo", "name": "Beast 21SP", "spec": "21-speed" },
-    { "brand": "Hercules Roadeo", "name": "Fugitive 21SP", "spec": "21-speed" },
-    { "brand": "Hercules Roadeo", "name": "Draugr 21SP", "spec": "21-speed" },
-    { "brand": "Hercules Roadeo", "name": "Ryken 21SP", "spec": "21-speed" },
-    { "brand": "Hercules Roadeo", "name": "Mayhem", "spec": "" },
-    { "brand": "Hercules Roadeo", "name": "Ravager", "spec": "" },
-    { "brand": "Hercules", "name": "NFS 29T", "spec": "29-inch" },
-    { "brand": "Hercules", "name": "NFS 27.5T", "spec": "27.5-inch" },
-    { "brand": "Hercules", "name": "A30 26T", "spec": "26-inch" },
-    { "brand": "Hercules", "name": "A75 26T", "spec": "26-inch" },
-    { "brand": "Hercules", "name": "DOOM 3T HT DX2 26T", "spec": "26-inch hardtail" },
-    { "brand": "Hercules", "name": "Dynamite ZX 26T", "spec": "26-inch" },
-    { "brand": "Hercules", "name": "Havoc FX DD", "spec": "dual disc" },
-    { "brand": "Hercules", "name": "Brute", "spec": "" },
-    { "brand": "Hercules", "name": "Rogue", "spec": "" },
-    { "brand": "Ninety One", "name": "Shadowfax 29T", "spec": "29-inch, 21-speed" },
-    { "brand": "Ninety One", "name": "Kamet 29T", "spec": "29-inch, 21-speed" },
-    { "brand": "Ninety One", "name": "Madrid 27.5T", "spec": "27.5-inch, 21-speed" },
-    { "brand": "Ninety One", "name": "Panther 27.5T", "spec": "27.5-inch" },
-    { "brand": "Ninety One", "name": "Lethal X 2.0 Alloy 27.5T", "spec": "27.5-inch alloy, 21-speed" },
-    { "brand": "Ninety One", "name": "Hydra X 29T", "spec": "29-inch, 21-speed" },
-    { "brand": "Ninety One", "name": "Dark Knight 27.5T", "spec": "27.5-inch" },
-    { "brand": "Firefox", "name": "Tremor X 27.5", "spec": "27.5-inch, 21-speed, hi-tensile steel" },
-    { "brand": "Firefox", "name": "Sigma", "spec": "aluminium frame" },
-    { "brand": "Firefox", "name": "Sigma +", "spec": "aluminium frame" },
-    { "brand": "Firefox", "name": "Combat", "spec": "" },
-    { "brand": "Firefox", "name": "Rush", "spec": "" },
-    { "brand": "Montra", "name": "Madrock", "spec": "entry-level MTB" },
-    { "brand": "Montra", "name": "Rock 3.1", "spec": "" },
-    { "brand": "Btwin", "name": "Rockrider Explore 30", "spec": "" },
-    { "brand": "Merida", "name": "Big Nine 20-3X", "spec": "29-inch" },
-    { "brand": "Rockfire", "name": "Ridge 27.5", "spec": "27.5-inch" }
-  ],
-
-  "gear": [
-    { "brand": "Hercules", "name": "Hank 21 Speed", "spec": "21-speed" },
-    { "brand": "Hercules Roadeo", "name": "Beast 21SP", "spec": "21-speed" },
-    { "brand": "Hercules Roadeo", "name": "Draugr 21SP", "spec": "21-speed" },
-    { "brand": "Hercules Roadeo", "name": "Ryken 21SP", "spec": "21-speed" },
-    { "brand": "Hercules Roadeo", "name": "Fugitive 21SP", "spec": "21-speed" },
-    { "brand": "Hercules Roadeo", "name": "Rift 24SP FX DD", "spec": "24-speed, dual disc" },
-    { "brand": "Hercules Roadeo", "name": "Rift 24SP IC FX DD", "spec": "24-speed, dual disc" },
-    { "brand": "Ninety One", "name": "Capetown IBC 21S", "spec": "21-speed, 24T to 29T" },
-    { "brand": "Ninety One", "name": "Amsterdam 21S", "spec": "21-speed, 24T to 29T" },
-    { "brand": "Ninety One", "name": "Oslo IBC 27.5T 21S", "spec": "27.5-inch, 21-speed" },
-    { "brand": "Ninety One", "name": "Porto 29T 21S", "spec": "29-inch, 21-speed" },
-    { "brand": "Ninety One", "name": "Dragoon S21 26T", "spec": "26-inch, multi-speed" },
-    { "brand": "Ninety One", "name": "Drago X 26T", "spec": "26-inch, 21-speed" },
-    { "brand": "Ninety One", "name": "Amsterdam 7S", "spec": "7-speed" },
-    { "brand": "Mach City", "name": "Munich 21 Speed", "spec": "21-speed" },
-    { "brand": "Mach City", "name": "Montreal 21 Speed", "spec": "21-speed" },
-    { "brand": "Mach City", "name": "iBike W 7 Speed", "spec": "7-speed, step-through" },
-    { "brand": "Montra", "name": "Rock 4.1", "spec": "" },
-    { "brand": "Montra", "name": "Rock 2.1", "spec": "" },
-    { "brand": "Btwin", "name": "Rockrider ST30", "spec": "7-speed" },
-    { "brand": "Cosmic", "name": "700C Camo RF 24-Speed", "spec": "700C, 24-speed" },
-    { "brand": "Merida", "name": "Big Seven 20-2X", "spec": "27.5-inch" },
-    { "brand": "Ninety One", "name": "Storm Shadow 700C", "spec": "700C, 7-speed" }
-  ],
-
-  "disc": [
-    { "brand": "Hercules", "name": "Knighter FX DD", "spec": "dual disc" },
-    { "brand": "Hercules", "name": "Knighter IC FX DD", "spec": "internal cable, dual disc" },
-    { "brand": "Hercules", "name": "Redeem XR FX DD", "spec": "dual disc" },
-    { "brand": "Hercules", "name": "Redeem XR IC FX DD", "spec": "internal cable, dual disc" },
-    { "brand": "Hercules", "name": "Redeem XR 3T FX DD", "spec": "dual disc" },
-    { "brand": "Hercules", "name": "The Defender FX DD", "spec": "dual disc" },
-    { "brand": "Hercules", "name": "The Defender IC FX DD", "spec": "internal cable, dual disc" },
-    { "brand": "Hercules", "name": "Rift FX DD", "spec": "dual disc" },
-    { "brand": "Hercules", "name": "Rift IC FX DD", "spec": "internal cable, dual disc" },
-    { "brand": "Hercules", "name": "Havoc IC FX DD", "spec": "internal cable, dual disc" },
-    { "brand": "Hercules Roadeo", "name": "Top Gear Redeem XR FX DD", "spec": "dual disc" },
-    { "brand": "Hercules Roadeo", "name": "Top Gear Redeem XR IC FX DD", "spec": "internal cable, dual disc" },
-    { "brand": "Hercules Roadeo", "name": "The Defender FX DD", "spec": "dual disc" },
-    { "brand": "Ninety One", "name": "Chicago Disc 29T", "spec": "29-inch, disc brakes" },
-    { "brand": "Ninety One", "name": "Bombay Tig D2Tx 29", "spec": "29-inch, dual disc" },
-    { "brand": "Ninety One", "name": "Madrid 27.5 21-Speed D/Disc", "spec": "27.5-inch, 21-speed, dual disc" },
-    { "brand": "Ninety One", "name": "Kamet 29 21-Speed D/Disc", "spec": "29-inch, 21-speed, dual disc" },
-    { "brand": "Ninety One", "name": "Shadowfax 29 21-Speed D/Disc", "spec": "29-inch, 21-speed, dual disc" },
-    { "brand": "Ninety One", "name": "Drago 26 21-Speed D/Disc", "spec": "26-inch, 21-speed, dual disc" },
-    { "brand": "Ninety One", "name": "Hellfire 700C D2RF", "spec": "700C, dual disc" },
-    { "brand": "Montra", "name": "Blues 1.2D", "spec": "disc brakes" },
-    { "brand": "Firefox", "name": "Viper", "spec": "double crown suspension, 26-inch" },
-    { "brand": "Firefox", "name": "Charger", "spec": "" },
-    { "brand": "Btwin", "name": "Rockrider Explore 50", "spec": "disc brakes" },
-    { "brand": "FitTrip", "name": "Vyper RS 29 24s", "spec": "29-inch, 24-speed" },
-    { "brand": "Rockfire", "name": "Ridge 29", "spec": "29-inch" }
-  ],
-
-  "hybrid": [
-    { "brand": "Ninety One", "name": "Expedition 700C", "spec": "700C, multi-speed" },
-    { "brand": "Ninety One", "name": "Expedition 700C New Edition", "spec": "700C, multi-speed" },
-    { "brand": "Ninety One", "name": "Storm Shadow 700C", "spec": "700C, 7-speed" },
-    { "brand": "Ninety One", "name": "Trooper 700C", "spec": "700C, multi-speed" },
-    { "brand": "Ninety One", "name": "Hellfire 700C", "spec": "700C, single speed" },
-    { "brand": "Ninety One", "name": "Hellfire 700C D2RF", "spec": "700C, dual disc" },
-    { "brand": "Ninety One", "name": "Tracer 700C SS", "spec": "700C, single speed" },
-    { "brand": "Montra", "name": "Trance Pro 700C", "spec": "700C, alloy frame" },
-    { "brand": "Montra", "name": "Blues 1.1", "spec": "6061 alloy hybrid frame" },
-    { "brand": "Montra", "name": "Blues 1.2D", "spec": "disc brakes" },
-    { "brand": "Montra", "name": "Helicon", "spec": "" },
-    { "brand": "Montra", "name": "Unplugged", "spec": "" },
-    { "brand": "Montra", "name": "Backbeat", "spec": "" },
-    { "brand": "Montra", "name": "Downtown", "spec": "" },
-    { "brand": "Mach City", "name": "iBike Single Speed 700C", "spec": "700C, single speed" },
-    { "brand": "Mach City", "name": "iBike W 7 Speed", "spec": "7-speed, step-through" },
-    { "brand": "Mach City", "name": "Mach City 2.0 700C", "spec": "700C" },
-    { "brand": "Btwin", "name": "Riverside 100", "spec": "" },
-    { "brand": "Firefox", "name": "Road Runner Pro V", "spec": "" },
-    { "brand": "Firefox", "name": "Breeze", "spec": "" },
-    { "brand": "Firefox", "name": "Karma", "spec": "low step-through aluminium frame" },
-    { "brand": "Hercules", "name": "Geolander", "spec": "" },
-    { "brand": "Hercules", "name": "Griffin", "spec": "" }
-  ],
-
-  "electric": [
-    { "brand": "EMotorad", "name": "Viper", "spec": "" },
-    { "brand": "EMotorad", "name": "Doodle Pro", "spec": "" },
-    { "brand": "EMotorad", "name": "T-Rex Air", "spec": "" },
-    { "brand": "EMotorad", "name": "T-Rex Pro", "spec": "" },
-    { "brand": "EMotorad", "name": "ST-X", "spec": "" },
-    { "brand": "EMotorad", "name": "X1", "spec": "" },
-    { "brand": "EMotorad", "name": "X2", "spec": "" },
-    { "brand": "EMotorad", "name": "Ranger", "spec": "" },
-    { "brand": "EMotorad", "name": "Dope", "spec": "" },
-    { "brand": "EMotorad", "name": "Legend 07 MSD Edition", "spec": "" },
-    { "brand": "EMotorad", "name": "EMX", "spec": "" },
-    { "brand": "Hero Lectro", "name": "Y3", "spec": "pedal assist" },
-    { "brand": "Hero Lectro", "name": "Y3+", "spec": "pedal assist" },
-    { "brand": "Hero Lectro", "name": "Y5", "spec": "pedal assist" },
-    { "brand": "Hero Lectro", "name": "Y5+", "spec": "pedal assist" },
-    { "brand": "Hero Lectro", "name": "C8", "spec": "pedal assist and throttle, 30–35 km range" },
-    { "brand": "Hero Lectro", "name": "H7", "spec": "" },
-    { "brand": "Hero Lectro", "name": "H4", "spec": "" },
-    { "brand": "Hercules", "name": "Yuvolt", "spec": "" },
-    { "brand": "Hercules", "name": "Yuvolt Sr", "spec": "" },
-    { "brand": "Motovolt", "name": "Hum", "spec": "" },
-    { "brand": "Motovolt", "name": "Urbn", "spec": "" },
-    { "brand": "Nexzu", "name": "Roadlark", "spec": "up to 100 km range" }
-  ],
-
-  "kids": [
-    { "brand": "BSA", "name": "Champ 14T", "spec": "14-inch" },
-    { "brand": "BSA", "name": "Champ 16T", "spec": "16-inch" },
-    { "brand": "BSA", "name": "Champ 20T", "spec": "20-inch" },
-    { "brand": "BSA", "name": "Cindrella 16T", "spec": "16-inch" },
-    { "brand": "BSA", "name": "Cindrella 20T", "spec": "20-inch" },
-    { "brand": "BSA", "name": "Cybot 20T", "spec": "20-inch" },
-    { "brand": "BSA", "name": "Flora 16T", "spec": "16-inch" },
-    { "brand": "BSA", "name": "Flora 20T", "spec": "20-inch" },
-    { "brand": "BSA", "name": "Go 16T", "spec": "16-inch" },
-    { "brand": "BSA", "name": "Ambush 16T", "spec": "16-inch" },
-    { "brand": "BSA", "name": "Ambush 20T", "spec": "20-inch" },
-    { "brand": "BSA Ladybird", "name": "Cindy 26T", "spec": "26-inch" },
-    { "brand": "BSA Ladybird", "name": "Diva 26T SLR", "spec": "26-inch" },
-    { "brand": "BSA Ladybird", "name": "Ibiza 24T", "spec": "24-inch" },
-    { "brand": "BSA Ladybird", "name": "Rhea 26T", "spec": "26-inch" },
-    { "brand": "BSA Ladybird", "name": "Shine 26T", "spec": "26-inch" },
-    { "brand": "Hero", "name": "Bloom", "spec": "first rides, 2–4 yrs" },
-    { "brand": "Hero", "name": "Boomer", "spec": "" },
-    { "brand": "Hero", "name": "Jumpshot+", "spec": "" },
-    { "brand": "Hero", "name": "Lilstar", "spec": "" },
-    { "brand": "Hero", "name": "Starborn", "spec": "" },
-    { "brand": "Hero", "name": "Angel", "spec": "" },
-    { "brand": "Hero", "name": "Shotgun", "spec": "" },
-    { "brand": "Hero", "name": "Toki", "spec": "teens, 10–13 yrs" },
-    { "brand": "Hero", "name": "Katana", "spec": "teens" },
-    { "brand": "Hero", "name": "Ninjato", "spec": "teens" },
-    { "brand": "Ninety One", "name": "Diego 24T", "spec": "24-inch, single speed" },
-    { "brand": "Ninety One", "name": "Boston 24T New Edition", "spec": "24-inch" },
-    { "brand": "Hercules", "name": "Kombat RF 24T", "spec": "24-inch, ages 11–16" },
-    { "brand": "Btwin", "name": "Runride 100", "spec": "balance bike" },
-    { "brand": "Btwin", "name": "Riverside 24", "spec": "24-inch, single speed" }
-  ],
-
-  "road": [
-    { "brand": "Btwin", "name": "Triban RC100", "spec": "700C, drop bar, 7-speed" },
-    { "brand": "Btwin", "name": "Triban 100", "spec": "700C, drop bar" },
-    { "brand": "Btwin", "name": "Triban 520", "spec": "700C, drop bar" },
-    { "brand": "Btwin", "name": "Triban 100 Flat Bar", "spec": "700C, flat bar" },
-    { "brand": "Montra", "name": "Celtic", "spec": "6061 aluminium frame and fork" },
-    { "brand": "Firefox", "name": "Rapide 21S", "spec": "21-speed" },
-    { "brand": "Firefox", "name": "Aeron", "spec": "" },
-    { "brand": "Firefox", "name": "Roadrunner", "spec": "" },
-    { "brand": "Firefox", "name": "Road Runner Pro V", "spec": "" },
-    { "brand": "Ninety One", "name": "Tracer 700C SS", "spec": "700C, single speed" },
-    { "brand": "Ninety One", "name": "Expedition 700C", "spec": "700C, multi-speed" },
-    { "brand": "Cosmic", "name": "700C Camo RF 24-Speed", "spec": "700C, 24-speed" },
-    { "brand": "Cosmic", "name": "Eldorado", "spec": "" },
-    { "brand": "Mach City", "name": "Vienna SS 700C", "spec": "700C, single speed" }
-  ],
-
-  "bmx": [
-    { "brand": "Firefox", "name": "Skull", "spec": "BMX steel frame, 20 × 2.125 tyres" },
-    { "brand": "Firefox", "name": "Meteorider 20", "spec": "20-inch, hi-tensile steel BMX/cross frame" },
-    { "brand": "Firefox", "name": "Maddok", "spec": "24-inch dirt jumper" },
-    { "brand": "Avon", "name": "Buke Nest 20T", "spec": "20-inch BMX" },
-    { "brand": "Hero", "name": "Blast", "spec": "" },
-    { "brand": "Hero", "name": "Sniper", "spec": "teens" },
-    { "brand": "BSA", "name": "Cybot 20T", "spec": "20-inch" }
-  ],
-
-  "folding": [
-    { "brand": "Dahon", "name": "Vybe", "spec": "20-inch folding" },
-    { "brand": "Dahon", "name": "SUV", "spec": "folding" },
-    { "brand": "Btwin", "name": "Tilt", "spec": "20-inch folding" },
-    { "brand": "Btwin", "name": "Hoptown", "spec": "folding commuter" }
-  ],
-
-  "city": [
-    { "brand": "Mach City", "name": "iBike Single Speed 700C", "spec": "700C, single speed" },
-    { "brand": "Mach City", "name": "iBike 27.5 Single Speed", "spec": "27.5-inch, single speed" },
-    { "brand": "Mach City", "name": "iBike W Single Speed", "spec": "step-through, single speed" },
-    { "brand": "Mach City", "name": "iBike W 7 Speed", "spec": "step-through, 7-speed" },
-    { "brand": "Mach City", "name": "Munich Single Speed", "spec": "single speed" },
-    { "brand": "Mach City", "name": "Munich 21 Speed", "spec": "21-speed" },
-    { "brand": "Mach City", "name": "Montreal Single Speed", "spec": "single speed" },
-    { "brand": "Mach City", "name": "Montreal 21 Speed", "spec": "21-speed" },
-    { "brand": "Mach City", "name": "Vienna", "spec": "" },
-    { "brand": "Mach City", "name": "Vienna SS 700C", "spec": "700C, single speed" },
-    { "brand": "Mach City", "name": "Zurich Gents", "spec": "single speed" },
-    { "brand": "Mach City", "name": "Zurich Ladies", "spec": "single speed, step-through" },
-    { "brand": "Hercules", "name": "Flarecity 26T", "spec": "26-inch" },
-    { "brand": "Hercules", "name": "Streetcat Pro HT 26T", "spec": "26-inch" },
-    { "brand": "Hercules", "name": "Streetcat Pro HT DX2 26T", "spec": "26-inch" },
-    { "brand": "Hercules", "name": "Flare RF 26T", "spec": "26-inch" },
-    { "brand": "Firefox", "name": "Drift", "spec": "mechanical lockout suspension" },
-    { "brand": "Firefox", "name": "Karma", "spec": "low step-through aluminium frame" },
-    { "brand": "Firefox", "name": "Breeze", "spec": "" },
-    { "brand": "Hero", "name": "Jet Gold", "spec": "" },
-    { "brand": "Hero", "name": "Milano", "spec": "" },
-    { "brand": "Ninety One", "name": "Trooper 700C", "spec": "700C, multi-speed" },
-    { "brand": "Avon", "name": "Neon", "spec": "" },
-    { "brand": "Avon", "name": "Avon 26T", "spec": "26-inch" }
-  ],
-
-  "touring": [
-    { "brand": "Mach City", "name": "Vienna", "spec": "city and touring geometry" },
-    { "brand": "Mach City", "name": "Vienna SS 700C", "spec": "700C, single speed" },
-    { "brand": "Montra", "name": "Trance Pro 700C", "spec": "700C, alloy frame" },
-    { "brand": "Montra", "name": "Unplugged", "spec": "" },
-    { "brand": "Ninety One", "name": "Expedition 700C", "spec": "700C, multi-speed" },
-    { "brand": "Ninety One", "name": "Expedition 700C New Edition", "spec": "700C, multi-speed" },
-    { "brand": "Btwin", "name": "Riverside 100", "spec": "" },
-    { "brand": "Btwin", "name": "Rockrider EXPL 10", "spec": "" }
-  ],
-
-  "cruiser": [
-    { "brand": "Firefox", "name": "Pirate", "spec": "Firefox Classic" },
-    { "brand": "Firefox", "name": "Dominator", "spec": "Firefox Classic" },
-    { "brand": "Firefox", "name": "Maddok", "spec": "24-inch, Firefox Classic" },
-    { "brand": "Mach City", "name": "Zurich Gents", "spec": "single speed, relaxed geometry" },
-    { "brand": "Mach City", "name": "Zurich Ladies", "spec": "single speed, step-through" },
-    { "brand": "Hercules", "name": "Hardstyle", "spec": "" },
-    { "brand": "Hercules", "name": "Hardstyle Pro", "spec": "" },
-    { "brand": "Hercules", "name": "Shurveer", "spec": "" }
-  ]
+ "_note": "Models and product photographs gathered from the public Shopify catalogues of Indian bicycle retailers and brands (choosemybicycle.com, trackandtrail.in, justbuycycles.com, cyclingboutique.in, bicyclekart.com, vdchawlacycles.com, firefoxlife.com, herolectro.com). Photos are stored in models/. No prices: confirm in store. Edit this file and run build_models.py to rebuild the pages.",
+ "mtb": [
+  {
+   "brand": "Avon",
+   "name": "Witcher IBC FS SS D/Disc",
+   "spec": "26-inch, single speed, dual disc, front suspension",
+   "img": "mtb-6676a48ba4.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Ciri Lady IBC",
+   "spec": "26-inch",
+   "img": "mtb-618b1fdcb4.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Next RS IC",
+   "spec": "27.5-inch",
+   "img": "mtb-80c0439e3d.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Viper IC FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "mtb-19875595d2.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Sniper Sports FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "mtb-f3f598b8c7.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Miss India Archie",
+   "spec": "26-inch",
+   "img": "mtb-29991f61f3.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Katana FS SS D/Disc",
+   "spec": "26-inch, single speed, dual disc, front suspension",
+   "img": "mtb-af128ce270.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Dominator FS SS D/Disc",
+   "spec": "26-inch, single speed, dual disc, front suspension",
+   "img": "mtb-6cb3446f09.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Dominator+ 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "mtb-96bef671bf.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Direwolf 2.0 D2Tx FS D/Disc",
+   "spec": "29-inch, dual disc, front suspension",
+   "img": "mtb-d3c2a5145c.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Black Tiger Pro D2Tx FS SS D/Disc",
+   "spec": "29-inch, single speed, dual disc, front suspension",
+   "img": "mtb-54e427aa4d.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Amsterdam 21-Speed FS D/Disc",
+   "spec": "29-inch, 21-speed, dual disc, front suspension",
+   "img": "mtb-195e74238e.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Porto D2Tx 21-Speed FS D/Disc",
+   "spec": "27.5-inch, 21-speed, dual disc, front suspension",
+   "img": "mtb-9d654e04e0.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Black Tiger SS FS D/Disc",
+   "spec": "27.5-inch, single speed, dual disc, front suspension",
+   "img": "mtb-a0c3d231f7.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Veeraa IBC",
+   "spec": "26-inch",
+   "img": "mtb-95dec6fc3e.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Taka Tak IBC",
+   "spec": "26-inch",
+   "img": "mtb-a269f500c3.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Stormfire IBC",
+   "spec": "26-inch",
+   "img": "mtb-216f509e36.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Spinzy D2Tx FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "mtb-2faaff30af.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Capetown 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "mtb-007c4085fa.jpg"
+  },
+  {
+   "brand": "Cosmic",
+   "name": "Level Clover FS SS",
+   "spec": "26-inch, single speed, front suspension",
+   "img": "mtb-729637abf3.jpg"
+  },
+  {
+   "brand": "Polygon",
+   "name": "Bend R5 27.5",
+   "spec": "27.5-inch",
+   "img": "mtb-af9644a937.jpg"
+  },
+  {
+   "brand": "Polygon",
+   "name": "Bend R2 27.5",
+   "spec": "27.5-inch",
+   "img": "mtb-47077d266a.jpg"
+  },
+  {
+   "brand": "Polygon",
+   "name": "Syncline C2 27.5",
+   "spec": "27.5-inch",
+   "img": "mtb-53995ed423.jpg"
+  },
+  {
+   "brand": "Polygon",
+   "name": "Siskiu D7 LG 27.5",
+   "spec": "27.5-inch",
+   "img": "mtb-6c206b571d.jpg"
+  }
+ ],
+ "gear": [
+  {
+   "brand": "Firefox",
+   "name": "Dominator+ 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "gear-96bef671bf.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Expedition 21-Speed D/Disc",
+   "spec": "700C, 21-speed, dual disc",
+   "img": "gear-0ab1230158.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Amsterdam 21-Speed FS D/Disc",
+   "spec": "29-inch, 21-speed, dual disc, front suspension",
+   "img": "gear-195e74238e.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Porto D2Tx 21-Speed FS D/Disc",
+   "spec": "27.5-inch, 21-speed, dual disc, front suspension",
+   "img": "gear-9d654e04e0.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Capetown 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "gear-007c4085fa.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Voltage 21-Speed D/Disc",
+   "spec": "26-inch, 21-speed, dual disc",
+   "img": "gear-6c4afa0ce0.jpg"
+  },
+  {
+   "brand": "Cosmic",
+   "name": "Matrix 21-Speed",
+   "spec": "700C, 21-speed",
+   "img": "gear-e04b0cd0ff.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Direwolf 2.0 21-Speed D2TX FS D/Disc",
+   "spec": "29-inch, 21-speed, dual disc, front suspension",
+   "img": "gear-22d8449e4f.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Next IC 21-Speed FS Disc",
+   "spec": "26-inch, 21-speed, disc brakes, front suspension",
+   "img": "gear-552fddd1d1.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Next Sports 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "gear-37f02a41f8.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Sprint Flanker 21-Speed D/Disc",
+   "spec": "27.5-inch, 21-speed, dual disc",
+   "img": "gear-dfbe059f08.jpg"
+  },
+  {
+   "brand": "Cosmic",
+   "name": "Tusk 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "gear-826d89b9fc.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Dominator+ 21 Speed D/Disc",
+   "spec": "27.5-inch, 21-speed, dual disc",
+   "img": "gear-a65f315db2.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Tremor 21-Speed D/Disc",
+   "spec": "27.5-inch, 21-speed, dual disc",
+   "img": "gear-bdf71f70dd.jpg"
+  },
+  {
+   "brand": "Leader",
+   "name": "Gldiator Multi Speed 21 Speed 26T Hybrid",
+   "spec": "21-speed",
+   "img": "gear-fc93c0b7fe.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "Top Gun 21 Speed",
+   "spec": "21-speed",
+   "img": "gear-2ae2cf099e.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "Top Gun 7 Speed",
+   "spec": "7-speed",
+   "img": "gear-152febdeac.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "XC 90 21 Speed",
+   "spec": "21-speed",
+   "img": "gear-d6054b5eec.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "XC 90 7 Speed",
+   "spec": "7-speed",
+   "img": "gear-71f7d0b1d8.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "Black Ninja Fat 21 Speed",
+   "spec": "21-speed",
+   "img": "gear-0a26735deb.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "Black Ninja Fat 7 Speed",
+   "spec": "7-speed",
+   "img": "gear-efc89d3171.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "Elora Red Pro 7 Speed",
+   "spec": "7-speed",
+   "img": "gear-bade98ebcd.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "Elora Red 7 Speed",
+   "spec": "7-speed",
+   "img": "gear-3de6778254.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "Wolf 27 Speed 29T",
+   "spec": "29-inch, 27-speed",
+   "img": "gear-c79948d443.jpg"
+  }
+ ],
+ "disc": [
+  {
+   "brand": "Avon",
+   "name": "Witcher IBC FS SS D/Disc",
+   "spec": "26-inch, single speed, dual disc, front suspension",
+   "img": "disc-6676a48ba4.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Viper IC FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "disc-19875595d2.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Sniper Sports FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "disc-f3f598b8c7.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Katana FS SS D/Disc",
+   "spec": "26-inch, single speed, dual disc, front suspension",
+   "img": "disc-af128ce270.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Next FS Sports D/Disc",
+   "spec": "24-inch, dual disc, front suspension",
+   "img": "disc-fbd7dc6f6d.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Dominator FS SS D/Disc",
+   "spec": "26-inch, single speed, dual disc, front suspension",
+   "img": "disc-6cb3446f09.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Dominator+ 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "disc-96bef671bf.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Expedition 21-Speed D/Disc",
+   "spec": "700C, 21-speed, dual disc",
+   "img": "disc-0ab1230158.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Direwolf 2.0 D2Tx FS D/Disc",
+   "spec": "29-inch, dual disc, front suspension",
+   "img": "disc-d3c2a5145c.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Black Tiger Pro D2Tx FS SS D/Disc",
+   "spec": "29-inch, single speed, dual disc, front suspension",
+   "img": "disc-54e427aa4d.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Amsterdam 21-Speed FS D/Disc",
+   "spec": "29-inch, 21-speed, dual disc, front suspension",
+   "img": "disc-195e74238e.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Porto D2Tx 21-Speed FS D/Disc",
+   "spec": "27.5-inch, 21-speed, dual disc, front suspension",
+   "img": "disc-9d654e04e0.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Black Tiger SS FS D/Disc",
+   "spec": "27.5-inch, single speed, dual disc, front suspension",
+   "img": "disc-a0c3d231f7.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Spinzy D2Tx FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "disc-2faaff30af.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Capetown 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "disc-007c4085fa.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Marshal IBC FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "disc-65530b7b87.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Voltage 21-Speed D/Disc",
+   "spec": "26-inch, 21-speed, dual disc",
+   "img": "disc-6c4afa0ce0.jpg"
+  },
+  {
+   "brand": "Stryder",
+   "name": "Krueger FS SS D/Disc",
+   "spec": "27.5-inch, single speed, dual disc, front suspension",
+   "img": "disc-a488c8dbc7.jpg"
+  },
+  {
+   "brand": "Stryder",
+   "name": "Aerojet SS FS D/Disc",
+   "spec": "27.5-inch, single speed, dual disc, front suspension",
+   "img": "disc-1b7bee6ea0.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Direwolf 2.0 21-Speed D2TX FS D/Disc",
+   "spec": "29-inch, 21-speed, dual disc, front suspension",
+   "img": "disc-22d8449e4f.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Zordar D2TX FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "disc-5f961f34cf.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Next IC 21-Speed FS Disc",
+   "spec": "26-inch, 21-speed, disc brakes, front suspension",
+   "img": "disc-552fddd1d1.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Next IC FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "disc-b13c743bb6.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Next Sports 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "disc-37f02a41f8.jpg"
+  }
+ ],
+ "hybrid": [
+  {
+   "brand": "Ninety One",
+   "name": "Expedition 21-Speed D/Disc",
+   "spec": "700C, 21-speed, dual disc",
+   "img": "hybrid-0ab1230158.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Sub Cross J1 Mistic Dark Blue Hybrid",
+   "spec": "700C",
+   "img": "hybrid-96cf01654f.jpg"
+  },
+  {
+   "brand": "Cosmic",
+   "name": "Matrix 21-Speed",
+   "spec": "700C, 21-speed",
+   "img": "hybrid-e04b0cd0ff.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Rush SS FS D/Disc",
+   "spec": "700C, single speed, dual disc, front suspension",
+   "img": "hybrid-4fcdaa6059.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Drift+ FS SS",
+   "spec": "700C, single speed, front suspension",
+   "img": "hybrid-b37e4a1359.jpg"
+  },
+  {
+   "brand": "Leader",
+   "name": "Gldiator Multi Speed 21 Speed 26T Hybrid",
+   "spec": "21-speed",
+   "img": "hybrid-fc93c0b7fe.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "Concept Hybrid 27 Speed",
+   "spec": "27-speed",
+   "img": "hybrid-17c256acd4.jpg"
+  },
+  {
+   "brand": "Cradiac",
+   "name": "Concept Hybrid 24 Speed",
+   "spec": "24-inch, 24-speed",
+   "img": "hybrid-464fa904c5.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Vienna SS 700C",
+   "spec": "700C, single speed",
+   "img": "hybrid-05460da3d3.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Drift Plus FS 21-Speed D/Disc",
+   "spec": "700C, 21-speed, dual disc, front suspension",
+   "img": "hybrid-63738e694e.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Speedster 10 Champion Black Endurance Road",
+   "spec": "700C",
+   "img": "hybrid-ad80cb4799.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Speedster 10 Cumulus White Endurance Road",
+   "spec": "700C",
+   "img": "hybrid-648d42f9de.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Speedster Gravel 30 Perfomance",
+   "spec": "700C",
+   "img": "hybrid-e87a447ecf.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Sub Cross 20 Men City/Urban/Hybrid",
+   "spec": "700C",
+   "img": "hybrid-113eaba147.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Sub Cross 30",
+   "spec": "700C",
+   "img": "hybrid-8ca230eabe.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Sub Cross 30 Lady City/Urban/Hybrid",
+   "spec": "700C",
+   "img": "hybrid-f026d634ad.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Speedster 20 Endurance Road",
+   "spec": "700C",
+   "img": "hybrid-83fbe45905.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Bike Addict RC 30 Road",
+   "spec": "700C",
+   "img": "hybrid-f3b2087266.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Bike Plasma RC Pro",
+   "spec": "700C",
+   "img": "hybrid-f55482b617.jpg"
+  },
+  {
+   "brand": "Viva",
+   "name": "Orca 21-Speed RF D/Disc",
+   "spec": "700C, 21-speed, dual disc",
+   "img": "hybrid-4e69a469d6.jpg"
+  },
+  {
+   "brand": "Viva",
+   "name": "Legend 21 Spd FS D/Disc",
+   "spec": "700C, dual disc, front suspension",
+   "img": "hybrid-95bc73ed99.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Aeron V 16 Speed",
+   "spec": "700C, 16-speed",
+   "img": "hybrid-51716d7a5e.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Athelio Single Speed",
+   "spec": "700C, single speed",
+   "img": "hybrid-81e101da7e.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Origine 27-Speed Disc",
+   "spec": "700C, 27-speed, dual disc",
+   "img": "hybrid-9b92863ae9.jpg"
+  }
+ ],
+ "electric": [
+  {
+   "brand": "Hero Lectro",
+   "name": "Y5+ 7-Speed FS D/Disc",
+   "spec": "29-inch, 7-speed, dual disc, front suspension",
+   "img": "electric-2fe3f59ed5.jpg"
+  },
+  {
+   "brand": "EMotorad",
+   "name": "Dope FS SS D/Disc E",
+   "spec": "24-inch, single speed, dual disc, front suspension",
+   "img": "electric-c1dc0bd5d0.jpg"
+  },
+  {
+   "brand": "EMotorad",
+   "name": "St-X E",
+   "spec": "700C",
+   "img": "electric-986e36aa76.jpg"
+  },
+  {
+   "brand": "Hero Lectro",
+   "name": "H7 Sigma",
+   "spec": "27.5-inch",
+   "img": "electric-e91d3d3f22.jpg"
+  },
+  {
+   "brand": "EMotorad",
+   "name": "Ranger",
+   "spec": "20-inch",
+   "img": "electric-768872ed74.jpg"
+  },
+  {
+   "brand": "EMotorad",
+   "name": "T-Rex Air",
+   "spec": "27.5-inch",
+   "img": "electric-04fff743d7.jpg"
+  },
+  {
+   "brand": "EMotorad",
+   "name": "X3",
+   "spec": "27.5-inch",
+   "img": "electric-e184cd1557.jpg"
+  },
+  {
+   "brand": "Hero Lectro",
+   "name": "Y5+",
+   "spec": "",
+   "img": "electric-e55c367c62.jpg"
+  },
+  {
+   "brand": "Hero Lectro",
+   "name": "Y3+",
+   "spec": "",
+   "img": "electric-f0cec75c09.jpg"
+  },
+  {
+   "brand": "Stryder",
+   "name": "Zeeta Plus Electric Cycle 27.5 inches Single Speed Lithium-ion",
+   "spec": "27.5-inch, single speed",
+   "img": "electric-ea78e87f41.jpg"
+  },
+  {
+   "brand": "Toutche",
+   "name": "Heileo M200",
+   "spec": "",
+   "img": "electric-33e27b659c.jpg"
+  },
+  {
+   "brand": "Toutche",
+   "name": "Heileo H200",
+   "spec": "",
+   "img": "electric-a5cff22d7d.jpg"
+  },
+  {
+   "brand": "Toutche",
+   "name": "Heileo H100",
+   "spec": "",
+   "img": "electric-8cde7ef508.jpg"
+  },
+  {
+   "brand": "Toutche",
+   "name": "Heileo M100",
+   "spec": "",
+   "img": "electric-6a9e5ffb8e.jpg"
+  },
+  {
+   "brand": "MOTOVOLT",
+   "name": "Urbn",
+   "spec": "",
+   "img": "electric-790f4b7653.jpg"
+  },
+  {
+   "brand": "MOTOVOLT",
+   "name": "Kivo Easy",
+   "spec": "",
+   "img": "electric-6da429b828.jpg"
+  },
+  {
+   "brand": "MOTOVOLT",
+   "name": "Kivo 24 E",
+   "spec": "24-inch",
+   "img": "electric-9c8894c70b.jpg"
+  },
+  {
+   "brand": "MOTOVOLT",
+   "name": "Kivo",
+   "spec": "",
+   "img": "electric-44d21ee416.jpg"
+  },
+  {
+   "brand": "MOTOVOLT",
+   "name": "Electric",
+   "spec": "",
+   "img": "electric-c95c26750a.jpg"
+  },
+  {
+   "brand": "Leader",
+   "name": "E-Power L8 27.5T Unisex",
+   "spec": "",
+   "img": "electric-1d6eba2245.jpg"
+  },
+  {
+   "brand": "Leader",
+   "name": "E-Power L7 27.5T Electric",
+   "spec": "",
+   "img": "electric-dd7267e460.jpg"
+  },
+  {
+   "brand": "Leader",
+   "name": "E-Power L6 27.5T Electric Cycle Red",
+   "spec": "",
+   "img": "electric-1614dd6f19.jpg"
+  },
+  {
+   "brand": "Leader",
+   "name": "E-Power L6 27.5T Electric Cycle Grey",
+   "spec": "",
+   "img": "electric-379b288dc8.jpg"
+  },
+  {
+   "brand": "Hero Lectro",
+   "name": "C8",
+   "spec": "",
+   "img": "electric-1b807f9092.jpg"
+  }
+ ],
+ "kids": [
+  {
+   "brand": "Cosmic",
+   "name": "Big Fun IBC",
+   "spec": "14-inch",
+   "img": "kids-9ed6a8d40e.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Huffy Delux Cruiser IBC",
+   "spec": "20-inch",
+   "img": "kids-eecf753fe6.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Cyclux Kwik",
+   "spec": "16-inch",
+   "img": "kids-376c7f84dd.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Rumba IBC",
+   "spec": "14-inch",
+   "img": "kids-8566d2dbd5.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Lilstar Sport",
+   "spec": "20-inch",
+   "img": "kids-f9d99bc197.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Lilstar IC",
+   "spec": "20-inch",
+   "img": "kids-3fc508c84d.jpg"
+  },
+  {
+   "brand": "Hero",
+   "name": "Galaxy IBC",
+   "spec": "14-inch",
+   "img": "kids-b2bee78cbc.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Avira Girls",
+   "spec": "26-inch",
+   "img": "kids-b93bc571dc.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Rebel X 3.0",
+   "spec": "20-inch",
+   "img": "kids-5ca864db78.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Dazzling",
+   "spec": "14-inch",
+   "img": "kids-975cf5c7f9.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Bucky Sports",
+   "spec": "14-inch",
+   "img": "kids-dd470d14f1.jpg"
+  },
+  {
+   "brand": "Cosmic",
+   "name": "Tiara IBC",
+   "spec": "20-inch",
+   "img": "kids-eab82a2d3b.jpg"
+  },
+  {
+   "brand": "Cosmic",
+   "name": "Steel Boy IBC",
+   "spec": "20-inch",
+   "img": "kids-fccfc1f135.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Salsa IBC RF",
+   "spec": "20-inch",
+   "img": "kids-a404a6f704.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Roar IBC",
+   "spec": "20-inch",
+   "img": "kids-235920e722.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Marshal Sports FS D/Disc",
+   "spec": "26-inch, dual disc, front suspension",
+   "img": "kids-183575cec4.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Nextar IBC FS D/Disc",
+   "spec": "20-inch, dual disc, front suspension",
+   "img": "kids-e52e54c407.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Rumba",
+   "spec": "14-inch",
+   "img": "kids-11c61ec125.jpg"
+  },
+  {
+   "brand": "Ninety One",
+   "name": "Porto D2TX FS D/Disc",
+   "spec": "24-inch, dual disc, front suspension",
+   "img": "kids-d1c1d3142a.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Demon X",
+   "spec": "20-inch",
+   "img": "kids-12f88b8315.jpg"
+  },
+  {
+   "brand": "Royalbaby",
+   "name": "18 Space Shuttle",
+   "spec": "",
+   "img": "kids-c5771274fa.jpg"
+  },
+  {
+   "brand": "Royalbaby",
+   "name": "18 Moon",
+   "spec": "",
+   "img": "kids-31c6e6f803.jpg"
+  },
+  {
+   "brand": "Royalbaby",
+   "name": "Moon",
+   "spec": "16-inch",
+   "img": "kids-31c6e6f803.jpg"
+  },
+  {
+   "brand": "Royalbaby",
+   "name": "18 Stargirl",
+   "spec": "",
+   "img": "kids-4910385140.jpg"
+  }
+ ],
+ "road": [
+  {
+   "brand": "Hero",
+   "name": "sprint Unisex Voltage Ddb 26T Rear Road",
+   "spec": "",
+   "img": "road-2aad6287e4.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Speedster 10 Champion Black Endurance Road",
+   "spec": "700C",
+   "img": "road-ad80cb4799.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Speedster 10 Cumulus White Endurance Road",
+   "spec": "700C",
+   "img": "road-648d42f9de.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Speedster 20 Endurance Road",
+   "spec": "700C",
+   "img": "road-83fbe45905.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Bike Addict RC 30 Road",
+   "spec": "700C",
+   "img": "road-f3b2087266.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Aeron V 16 Speed",
+   "spec": "700C, 16-speed",
+   "img": "road-51716d7a5e.jpg"
+  },
+  {
+   "brand": "Lifelong",
+   "name": "Escape 26T, Matte Black 26T Road",
+   "spec": "26-inch, single speed",
+   "img": "road-442fad5496.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Rapide 700C T",
+   "spec": "700C, front suspension",
+   "img": "road-9758f39fc5.jpg"
+  },
+  {
+   "brand": "Leader",
+   "name": "Buddy 16T Dark Blue Orange Colour Cycle for Kids/Age Group 5-8 Years - Road",
+   "spec": "single speed",
+   "img": "road-137e03b317.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Rapide City Hybrid Bike – 700C, 21 Gear, Red",
+   "spec": "700C",
+   "img": "road-d30c376374.jpg"
+  },
+  {
+   "brand": "Scott",
+   "name": "Addict 20 Road",
+   "spec": "700C",
+   "img": "road-12ed54083d.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Tsurugi Road",
+   "spec": "",
+   "img": "road-7d622a7e36.jpg"
+  },
+  {
+   "brand": "Montra",
+   "name": "Reverb 700C D/Disc 21-Speed",
+   "spec": "700C, 21-speed, dual disc",
+   "img": "road-43907f389f.jpg"
+  },
+  {
+   "brand": "Montra",
+   "name": "Reverb 700C SS D/Disc",
+   "spec": "700C, single speed, dual disc",
+   "img": "road-05660dc604.jpg"
+  },
+  {
+   "brand": "Montra",
+   "name": "Reverb",
+   "spec": "",
+   "img": "road-03b489842d.jpg"
+  },
+  {
+   "brand": "Montra",
+   "name": "Celtic",
+   "spec": "",
+   "img": "road-ce1f4b9046.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Gypsy V 21-Speed",
+   "spec": "700C, 21-speed",
+   "img": "road-33dbaa0306.jpg"
+  }
+ ],
+ "bmx": [
+  {
+   "brand": "Royalbaby",
+   "name": "18 EZ Freestyle",
+   "spec": "",
+   "img": "bmx-2b1a73a82b.jpg"
+  },
+  {
+   "brand": "Royalbaby",
+   "name": "EZ Freestyle",
+   "spec": "16-inch",
+   "img": "bmx-2b1a73a82b.jpg"
+  },
+  {
+   "brand": "Royalbaby",
+   "name": "Freestyle",
+   "spec": "20-inch",
+   "img": "bmx-b5a526b386.jpg"
+  },
+  {
+   "brand": "Royalbaby",
+   "name": "18 Freestyle",
+   "spec": "",
+   "img": "bmx-9bd427c9fb.jpg"
+  },
+  {
+   "brand": "Royalbaby",
+   "name": "Freestyle 7th",
+   "spec": "14-inch",
+   "img": "bmx-9239bd18e3.jpg"
+  },
+  {
+   "brand": "Stryder",
+   "name": "Whizzy BMX IC",
+   "spec": "20-inch",
+   "img": "bmx-3455d6a81c.jpg"
+  },
+  {
+   "brand": "Firefox Life",
+   "name": "Skull",
+   "spec": "",
+   "img": "bmx-b374a96ac6.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Roto Spin 20t Bmx With 360 Degree Handle Rotation 20T Hybrid Cycle/City",
+   "spec": "20-inch",
+   "img": "bmx-55cfa3466b.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Skull Ss V-Brk",
+   "spec": "20-inch, single speed, V-brakes",
+   "img": "bmx-f2247825e5.jpg"
+  }
+ ],
+ "folding": [
+  {
+   "brand": "Folding",
+   "name": "Ebike 250Watt",
+   "spec": "",
+   "img": "folding-ebd8cf6388.jpg"
+  },
+  {
+   "brand": "Folding",
+   "name": "Elecson Folding Electric",
+   "spec": "",
+   "img": "folding-fc27ab9f55.jpg"
+  },
+  {
+   "brand": "Folding",
+   "name": "JetFlo High Pressure Floor Pump for Bicycle & Motorcycle",
+   "spec": "",
+   "img": "folding-ac620cbc98.jpg"
+  },
+  {
+   "brand": "Folding",
+   "name": "TRIPSADDLE X7 26T Folding Cycle White 21 Speed",
+   "spec": "21-speed",
+   "img": "folding-afee1b8276.jpg"
+  },
+  {
+   "brand": "Folding",
+   "name": "UBOARD Space Bike Folding Electric",
+   "spec": "",
+   "img": "folding-f8c1e08513.jpg"
+  },
+  {
+   "brand": "Folding",
+   "name": "Folding",
+   "spec": "",
+   "img": "folding-c03ba2755c.jpg"
+  },
+  {
+   "brand": "EMotorad",
+   "name": "Doodle Pro Foldable E-Bike – 36V 12.75Ah",
+   "spec": "12-inch",
+   "img": "folding-feb35880f4.jpg"
+  },
+  {
+   "brand": "Java",
+   "name": "NEO 349AL 9-Speed 16\" Folding",
+   "spec": "16-inch, 9-speed",
+   "img": "folding-635ec303cb.jpg"
+  },
+  {
+   "brand": "Java",
+   "name": "X2 7S 16-inch Folding",
+   "spec": "16-inch",
+   "img": "folding-d7eb46216d.jpg"
+  }
+ ],
+ "city": [
+  {
+   "brand": "Firefox",
+   "name": "Rush SS FS D/Disc",
+   "spec": "700C, single speed, dual disc, front suspension",
+   "img": "city-4fcdaa6059.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Drift+ FS SS",
+   "spec": "700C, single speed, front suspension",
+   "img": "city-b37e4a1359.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Vienna SS 700C",
+   "spec": "700C, single speed",
+   "img": "city-05460da3d3.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Athelio Single Speed",
+   "spec": "700C, single speed",
+   "img": "city-81e101da7e.jpg"
+  },
+  {
+   "brand": "Montra",
+   "name": "TIMBA Single Speed 700C T",
+   "spec": "700C, single speed",
+   "img": "city-7b52e2e54b.jpg"
+  },
+  {
+   "brand": "Stryder",
+   "name": "HYB 200, 700C MTB Unisex Premium Single Speed Bicycle - White/org 700C T",
+   "spec": "700C, single speed",
+   "img": "city-6789979bb0.jpg"
+  },
+  {
+   "brand": "Cosmic",
+   "name": "Grid SS",
+   "spec": "700C, single speed",
+   "img": "city-435fdf1192.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Pronto V 700C",
+   "spec": "700C, single speed",
+   "img": "city-badac7224b.jpg"
+  },
+  {
+   "brand": "Montra",
+   "name": "Reverb 700C SS D/Disc",
+   "spec": "700C, single speed, dual disc",
+   "img": "city-05660dc604.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Vienna",
+   "spec": "",
+   "img": "city-0e830bc8b2.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "iBike",
+   "spec": "",
+   "img": "city-1584f2c60c.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Zurich Ladies",
+   "spec": "",
+   "img": "city-2ecda9f31a.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Zurich Gents",
+   "spec": "",
+   "img": "city-83fe1dcbc4.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Rush D SS",
+   "spec": "700C, single speed",
+   "img": "city-0c9a5fa2ac.jpg"
+  }
+ ],
+ "touring": [
+  {
+   "brand": "Ninety One",
+   "name": "Expedition 21-Speed D/Disc",
+   "spec": "700C, 21-speed, dual disc",
+   "img": "touring-0ab1230158.jpg"
+  },
+  {
+   "brand": "Cosmic",
+   "name": "Matrix 21-Speed",
+   "spec": "700C, 21-speed",
+   "img": "touring-e04b0cd0ff.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Drift Plus FS 21-Speed D/Disc",
+   "spec": "700C, 21-speed, dual disc, front suspension",
+   "img": "touring-63738e694e.jpg"
+  },
+  {
+   "brand": "Viva",
+   "name": "Orca 21-Speed RF D/Disc",
+   "spec": "700C, 21-speed, dual disc",
+   "img": "touring-4e69a469d6.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Aeron V 16 Speed",
+   "spec": "700C, 16-speed",
+   "img": "touring-51716d7a5e.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Origine 27-Speed Disc",
+   "spec": "700C, 27-speed, dual disc",
+   "img": "touring-9b92863ae9.jpg"
+  },
+  {
+   "brand": "Cannondale",
+   "name": "Quick 4 Disc 21 Speed",
+   "spec": "700C, 21-speed, disc brakes",
+   "img": "touring-a72c209fe8.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Rush Plus D 21-Speed",
+   "spec": "700C, 21-speed",
+   "img": "touring-b5b8d8ad64.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Urban Eco D 7-Speed",
+   "spec": "700C, 7-speed",
+   "img": "touring-69d20033bb.jpg"
+  },
+  {
+   "brand": "Montra",
+   "name": "Reverb 700C D/Disc 21-Speed",
+   "spec": "700C, 21-speed, dual disc",
+   "img": "touring-43907f389f.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Gypsy V 21-Speed",
+   "spec": "700C, 21-speed",
+   "img": "touring-33dbaa0306.jpg"
+  }
+ ],
+ "cruiser": [
+  {
+   "brand": "Firefox",
+   "name": "Dominator FS SS D/Disc",
+   "spec": "26-inch, single speed, dual disc, front suspension",
+   "img": "cruiser-6cb3446f09.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Dominator+ 21-Speed FS D/Disc",
+   "spec": "26-inch, 21-speed, dual disc, front suspension",
+   "img": "cruiser-96bef671bf.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Dominator+ 21 Speed D/Disc",
+   "spec": "27.5-inch, 21-speed, dual disc",
+   "img": "cruiser-a65f315db2.jpg"
+  },
+  {
+   "brand": "Firefox Life",
+   "name": "Dominator",
+   "spec": "",
+   "img": "cruiser-0e0013fd1a.jpg"
+  },
+  {
+   "brand": "Avon",
+   "name": "Classic 28T",
+   "spec": "",
+   "img": "cruiser-594c56fce4.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Vienna SS 700C",
+   "spec": "700C, single speed",
+   "img": "cruiser-05460da3d3.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Zurich 26 Inch SS Men",
+   "spec": "26-inch, single speed",
+   "img": "cruiser-7ca133edbf.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Zurich 26 Inch SS Women",
+   "spec": "26-inch, single speed",
+   "img": "cruiser-6ab5378721.jpg"
+  },
+  {
+   "brand": "Firefox",
+   "name": "Pirate 3.0",
+   "spec": "",
+   "img": "cruiser-ddec3c0f17.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Vienna",
+   "spec": "",
+   "img": "cruiser-0e830bc8b2.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Zurich Ladies",
+   "spec": "",
+   "img": "cruiser-2ecda9f31a.jpg"
+  },
+  {
+   "brand": "Mach City",
+   "name": "Zurich Gents",
+   "spec": "",
+   "img": "cruiser-83fe1dcbc4.jpg"
+  }
+ ]
 }

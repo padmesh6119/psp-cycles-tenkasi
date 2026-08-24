@@ -30,17 +30,22 @@ CATEGORIES = {
 
 
 def card(model, slug, index):
-    """A catalogue entry. No photo: we have no real product shots, and
-    repeating one stock image 30 times per page reads as filler."""
     brand = html.escape(model['brand'])
     name = html.escape(model['name'])
     spec = html.escape(model.get('spec', '') or '')
-    spec_line = f'\n                    <p class="model-spec">{spec}</p>' if spec else ''
+    img = model.get('img', '')
+    spec_line = f'\n                        <p class="model-spec">{spec}</p>' if spec else ''
+    loading = '' if index < 4 else ' loading="lazy"'
 
     return f'''                <a class="model-card" href="index_pro.html#contact" data-brand="{brand}">
-                    <span class="model-brand">{brand}</span>
-                    <h3>{name}</h3>{spec_line}
-                    <span class="model-cta">Enquire <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    <span class="model-image">
+                        <img{loading} src="models/{img}" width="560" height="420" alt="{brand} {name}">
+                    </span>
+                    <span class="model-info">
+                        <span class="model-brand">{brand}</span>
+                        <h3>{name}</h3>{spec_line}
+                        <span class="model-cta">Enquire <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </span>
                 </a>'''
 
 
