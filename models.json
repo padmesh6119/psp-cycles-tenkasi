@@ -1,5 +1,5 @@
 {
- "_note": "Models and product photographs gathered from the public Shopify catalogues of Indian bicycle retailers and brands (choosemybicycle.com, trackandtrail.in, justbuycycles.com, cyclingboutique.in, bicyclekart.com, vdchawlacycles.com, firefoxlife.com, herolectro.com). Photos are stored in models/. No prices: confirm in store. Edit this file and run build_models.py to rebuild the pages.",
+ "_note": "Models and product photographs gathered from the public Shopify catalogues of Indian bicycle retailers and brands (choosemybicycle.com, trackandtrail.in, justbuycycles.com, cyclingboutique.in, bicyclekart.com, vdchawlacycles.com, firefoxlife.com, herolectro.com). Photos are in models/. No prices: confirm in store. Edit this file and run build_models.py to rebuild the collection pages.",
  "mtb": [
   {
    "brand": "Avon",
@@ -233,8 +233,8 @@
   },
   {
    "brand": "Leader",
-   "name": "Gldiator Multi Speed 21 Speed 26T Hybrid",
-   "spec": "21-speed",
+   "name": "Gldiator Multi Speed 21 Speed 26T",
+   "spec": "26-inch, 21-speed",
    "img": "gear-fc93c0b7fe.jpg"
   },
   {
@@ -447,7 +447,7 @@
   },
   {
    "brand": "Scott",
-   "name": "Sub Cross J1 Mistic Dark Blue Hybrid",
+   "name": "Sub Cross J1 Mistic Dark Blue",
    "spec": "700C",
    "img": "hybrid-96cf01654f.jpg"
   },
@@ -471,8 +471,8 @@
   },
   {
    "brand": "Leader",
-   "name": "Gldiator Multi Speed 21 Speed 26T Hybrid",
-   "spec": "21-speed",
+   "name": "Gldiator Multi Speed 21 Speed 26T",
+   "spec": "26-inch, 21-speed",
    "img": "hybrid-fc93c0b7fe.jpg"
   },
   {
@@ -501,13 +501,13 @@
   },
   {
    "brand": "Scott",
-   "name": "Speedster 10 Champion Black Endurance Road",
+   "name": "Speedster 10 Champion Black Endurance",
    "spec": "700C",
    "img": "hybrid-ad80cb4799.jpg"
   },
   {
    "brand": "Scott",
-   "name": "Speedster 10 Cumulus White Endurance Road",
+   "name": "Speedster 10 Cumulus White Endurance",
    "spec": "700C",
    "img": "hybrid-648d42f9de.jpg"
   },
@@ -519,7 +519,7 @@
   },
   {
    "brand": "Scott",
-   "name": "Sub Cross 20 Men City/Urban/Hybrid",
+   "name": "Sub Cross 20 City/Urban",
    "spec": "700C",
    "img": "hybrid-113eaba147.jpg"
   },
@@ -531,19 +531,19 @@
   },
   {
    "brand": "Scott",
-   "name": "Sub Cross 30 Lady City/Urban/Hybrid",
+   "name": "Sub Cross 30 Lady City/Urban",
    "spec": "700C",
    "img": "hybrid-f026d634ad.jpg"
   },
   {
    "brand": "Scott",
-   "name": "Speedster 20 Endurance Road",
+   "name": "Speedster 20 Endurance",
    "spec": "700C",
    "img": "hybrid-83fbe45905.jpg"
   },
   {
    "brand": "Scott",
-   "name": "Bike Addict RC 30 Road",
+   "name": "Bike Addict RC 30",
    "spec": "700C",
    "img": "hybrid-f3b2087266.jpg"
   },
@@ -701,33 +701,33 @@
   },
   {
    "brand": "Leader",
-   "name": "E-Power L8 27.5T Unisex",
-   "spec": "",
+   "name": "E-Power L8 27.5T",
+   "spec": "27.5-inch",
    "img": "electric-1d6eba2245.jpg"
   },
   {
    "brand": "Leader",
    "name": "E-Power L7 27.5T Electric",
-   "spec": "",
+   "spec": "27.5-inch",
    "img": "electric-dd7267e460.jpg"
   },
   {
    "brand": "Leader",
-   "name": "E-Power L6 27.5T Electric Cycle Red",
-   "spec": "",
+   "name": "E-Power L6 27.5T Electric",
+   "spec": "27.5-inch",
    "img": "electric-1614dd6f19.jpg"
-  },
-  {
-   "brand": "Leader",
-   "name": "E-Power L6 27.5T Electric Cycle Grey",
-   "spec": "",
-   "img": "electric-379b288dc8.jpg"
   },
   {
    "brand": "Hero Lectro",
    "name": "C8",
    "spec": "",
    "img": "electric-1b807f9092.jpg"
+  },
+  {
+   "brand": "Hero Lectro",
+   "name": "F3i",
+   "spec": "",
+   "img": "electric-1f709583db.jpg"
   }
  ],
  "kids": [
@@ -775,7 +775,7 @@
   },
   {
    "brand": "Ninety One",
-   "name": "Avira Girls",
+   "name": "Avira",
    "spec": "26-inch",
    "img": "kids-b93bc571dc.jpg"
   },
@@ -879,31 +879,31 @@
  "road": [
   {
    "brand": "Hero",
-   "name": "sprint Unisex Voltage Ddb 26T Rear Road",
-   "spec": "",
+   "name": "Sprint Voltage Ddb 26T Rear",
+   "spec": "26-inch",
    "img": "road-2aad6287e4.jpg"
   },
   {
    "brand": "Scott",
-   "name": "Speedster 10 Champion Black Endurance Road",
+   "name": "Speedster 10 Champion Black Endurance",
    "spec": "700C",
    "img": "road-ad80cb4799.jpg"
   },
   {
    "brand": "Scott",
-   "name": "Speedster 10 Cumulus White Endurance Road",
+   "name": "Speedster 10 Cumulus White Endurance",
    "spec": "700C",
    "img": "road-648d42f9de.jpg"
   },
   {
    "brand": "Scott",
-   "name": "Speedster 20 Endurance Road",
+   "name": "Speedster 20 Endurance",
    "spec": "700C",
    "img": "road-83fbe45905.jpg"
   },
   {
    "brand": "Scott",
-   "name": "Bike Addict RC 30 Road",
+   "name": "Bike Addict RC 30",
    "spec": "700C",
    "img": "road-f3b2087266.jpg"
   },
@@ -915,37 +915,31 @@
   },
   {
    "brand": "Lifelong",
-   "name": "Escape 26T, Matte Black 26T Road",
+   "name": "Escape 26T, Matte Black",
    "spec": "26-inch, single speed",
    "img": "road-442fad5496.jpg"
   },
   {
    "brand": "Firefox",
-   "name": "Rapide 700C T",
+   "name": "Rapide 700C",
    "spec": "700C, front suspension",
    "img": "road-9758f39fc5.jpg"
   },
   {
-   "brand": "Leader",
-   "name": "Buddy 16T Dark Blue Orange Colour Cycle for Kids/Age Group 5-8 Years - Road",
-   "spec": "single speed",
-   "img": "road-137e03b317.jpg"
-  },
-  {
    "brand": "Firefox",
-   "name": "Rapide City Hybrid Bike – 700C, 21 Gear, Red",
+   "name": "Rapide City Hybrid Bike – 700C, 21 Gear",
    "spec": "700C",
    "img": "road-d30c376374.jpg"
   },
   {
    "brand": "Scott",
-   "name": "Addict 20 Road",
+   "name": "Addict 20",
    "spec": "700C",
    "img": "road-12ed54083d.jpg"
   },
   {
    "brand": "Firefox",
-   "name": "Tsurugi Road",
+   "name": "Tsurugi",
    "spec": "",
    "img": "road-7d622a7e36.jpg"
   },
@@ -1025,7 +1019,7 @@
   },
   {
    "brand": "Avon",
-   "name": "Roto Spin 20t Bmx With 360 Degree Handle Rotation 20T Hybrid Cycle/City",
+   "name": "Roto Spin 20t Bmx With 360 Degree Handle Rotation Hybrid Cycle/City",
    "spec": "20-inch",
    "img": "bmx-55cfa3466b.jpg"
   },
@@ -1058,7 +1052,7 @@
   {
    "brand": "Folding",
    "name": "TRIPSADDLE X7 26T Folding Cycle White 21 Speed",
-   "spec": "21-speed",
+   "spec": "26-inch, 21-speed",
    "img": "folding-afee1b8276.jpg"
   },
   {
@@ -1070,13 +1064,13 @@
   {
    "brand": "Folding",
    "name": "Folding",
-   "spec": "",
+   "spec": "24-inch",
    "img": "folding-c03ba2755c.jpg"
   },
   {
    "brand": "EMotorad",
    "name": "Doodle Pro Foldable E-Bike – 36V 12.75Ah",
-   "spec": "12-inch",
+   "spec": "",
    "img": "folding-feb35880f4.jpg"
   },
   {
@@ -1119,13 +1113,13 @@
   },
   {
    "brand": "Montra",
-   "name": "TIMBA Single Speed 700C T",
+   "name": "TIMBA Single Speed 700C",
    "spec": "700C, single speed",
    "img": "city-7b52e2e54b.jpg"
   },
   {
    "brand": "Stryder",
-   "name": "HYB 200, 700C MTB Unisex Premium Single Speed Bicycle - White/org 700C T",
+   "name": "HYB 200, 700C MTB Premium Single Speed",
    "spec": "700C, single speed",
    "img": "city-6789979bb0.jpg"
   },
@@ -1152,12 +1146,6 @@
    "name": "Vienna",
    "spec": "",
    "img": "city-0e830bc8b2.jpg"
-  },
-  {
-   "brand": "Mach City",
-   "name": "iBike",
-   "spec": "",
-   "img": "city-1584f2c60c.jpg"
   },
   {
    "brand": "Mach City",
@@ -1285,15 +1273,9 @@
   },
   {
    "brand": "Mach City",
-   "name": "Zurich 26 Inch SS Men",
+   "name": "Zurich 26 Inch SS",
    "spec": "26-inch, single speed",
    "img": "cruiser-7ca133edbf.jpg"
-  },
-  {
-   "brand": "Mach City",
-   "name": "Zurich 26 Inch SS Women",
-   "spec": "26-inch, single speed",
-   "img": "cruiser-6ab5378721.jpg"
   },
   {
    "brand": "Firefox",
