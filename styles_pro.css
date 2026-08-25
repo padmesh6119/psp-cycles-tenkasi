@@ -253,7 +253,8 @@ h1, h2, h3, h4, h5 {
     inset: -4%;
     background: url('heritage/full/h000.jpg') center 42% / cover no-repeat;
     filter: grayscale(.55) contrast(1.06) brightness(.62) sepia(.28);
-    transform: scale(1.08);
+    /* driven by --hero-scale / --hero-p, both set from JS */
+    transform: scale(var(--hero-scale, 1.08)) translate3d(0, calc(var(--hero-p, 0) * 60px), 0);
     will-change: transform;
     z-index: -2;
 }
@@ -2292,3 +2293,8 @@ h1, h2, h3, h4, h5 {
     .model-card h3 { font-size: .88rem; }
     .model-spec { font-size: .7rem; }
 }
+
+/* ------------------------- CSP: no inline styles ------------------------ */
+.visually-hidden-field { display: none; }
+.plain-link { text-decoration: none; color: inherit; }
+.map-link { margin-top: 1rem; }
