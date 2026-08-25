@@ -6,9 +6,12 @@ Run after editing models.json:   python3 build_models.py
 
 import html
 import json
+from urllib.parse import quote
 import re
 import sys
 from pathlib import Path
+
+WHATSAPP = '919865488055'   # shop number, international form, digits only
 
 ROOT = Path(__file__).parent
 DATA = json.loads((ROOT / 'models.json').read_text(encoding='utf-8'))
@@ -37,14 +40,21 @@ def card(model, slug, index):
     spec_line = f'\n                        <p class="model-spec">{spec}</p>' if spec else ''
     loading = '' if index < 4 else ' loading="lazy"'
 
-    return f'''                <a class="model-card" href="index_pro.html#contact" data-brand="{brand}">
+    # tapping a model opens WhatsApp to the shop with the bike already named
+    msg = f"Hi, I saw the {model['brand']} {model['name']} on your website."
+    if model.get('spec'):
+        msg += f" ({model['spec']})"
+    msg += ' Is it available?'
+    wa = f'https://wa.me/{WHATSAPP}?text={quote(msg)}'
+
+    return f'''                <a class="model-card" href="{wa}" target="_blank" rel="noopener" data-brand="{brand}">
                     <span class="model-image">
                         <img{loading} src="models/{img}" width="560" height="420" alt="{brand} {name}">
                     </span>
                     <span class="model-info">
                         <span class="model-brand">{brand}</span>
                         <h3>{name}</h3>{spec_line}
-                        <span class="model-cta">Enquire <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        <span class="model-cta"><i class="fab fa-whatsapp" aria-hidden="true"></i> Enquire on WhatsApp</span>
                     </span>
                 </a>'''
 
