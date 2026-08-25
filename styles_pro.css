@@ -852,12 +852,25 @@ h1, h2, h3, h4, h5 {
 
 .lb-close:hover { background: var(--brass); border-color: var(--brass); color: var(--ink); transform: rotate(90deg); }
 
+/* The archive holds letters and invoices, so the viewer has to zoom and
+   scroll — fitting a 1500x2160 document to the viewport makes it unreadable. */
 .lb-stage {
     position: relative;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 26px 84px;
     min-height: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(247, 242, 233, .28) transparent;
+}
+
+.lb-stage::-webkit-scrollbar { width: 10px; height: 10px; }
+.lb-stage::-webkit-scrollbar-thumb {
+    background: rgba(247, 242, 233, .24);
+    border-radius: 10px;
 }
 
 .lb-stage img {
@@ -867,7 +880,59 @@ h1, h2, h3, h4, h5 {
     border-radius: 2px;
     box-shadow: 0 30px 90px rgba(0, 0, 0, .6);
     animation: lbIn .45s var(--ease);
+    cursor: zoom-in;
+    margin: auto;
 }
+
+/* Zoomed: natural size, panned by drag or touch. */
+.lb-stage.zoomed {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0;
+    cursor: grab;
+    touch-action: auto;
+}
+
+.lb-stage.zoomed img {
+    max-width: none;
+    max-height: none;
+    width: auto;
+    height: auto;
+    min-width: 100%;      /* a small scan still opens up to full reading width */
+    margin: 0;
+    cursor: grab;
+    animation: none;
+    border-radius: 0;
+}
+
+.lb-stage.zoomed.dragging,
+.lb-stage.zoomed.dragging img { cursor: grabbing; }
+
+.lb-zoom {
+    background: transparent;
+    border: 1px solid rgba(247, 242, 233, .2);
+    color: var(--paper);
+    height: 42px;
+    padding: 0 16px;
+    border-radius: 100px;
+    font-family: var(--body);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    transition: all .3s var(--ease);
+}
+
+.lb-zoom:hover { background: var(--brass); border-color: var(--brass); color: var(--ink); }
+.lb-head-actions { display: flex; align-items: center; gap: .7rem; }
+
+/* Hide the arrows while panning a zoomed document, they get in the way. */
+.lightbox.is-zoomed .lb-nav { opacity: 0; pointer-events: none; }
+.lb-nav { transition: opacity .3s var(--ease), background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease); }
 
 @keyframes lbIn { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: scale(1); } }
 

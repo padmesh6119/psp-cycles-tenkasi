@@ -583,7 +583,13 @@
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Archive viewer">
         <div class="lb-head">
             <span class="lb-counter" id="lbCounter">01 / 40</span>
-            <button class="lb-close" id="lbClose" aria-label="Close viewer"><i class="fas fa-xmark"></i></button>
+            <div class="lb-head-actions">
+                <button class="lb-zoom" id="lbZoom" type="button" aria-pressed="false">
+                    <i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i>
+                    <span id="lbZoomLabel">Zoom in</span>
+                </button>
+                <button class="lb-close" id="lbClose" aria-label="Close viewer"><i class="fas fa-xmark"></i></button>
+            </div>
         </div>
         <div class="lb-stage">
             <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>

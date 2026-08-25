@@ -8,7 +8,7 @@
    whatsapp      Shop number in international form, digits only.
    ------------------------------------------------------------------------- */
 const CONTACT = {
-    web3formsKey: '',
+    web3formsKey: 'a93fa7db-ba86-4ab7-af2f-4775e4540fa0',
     whatsapp: '919865488055'
 };
 
@@ -544,10 +544,65 @@ function initGallery() {
     const lbDesc = document.getElementById('lbDesc');
     const lbCounter = document.getElementById('lbCounter');
     const lbFoot = document.querySelector('.lb-foot');
+    const lbStage = document.querySelector('.lb-stage');
+    const lbZoom = document.getElementById('lbZoom');
+    const lbZoomLabel = document.getElementById('lbZoomLabel');
 
     let active = allItems.slice();
     let index = 0;
     let lastFocus = null;
+    let zoomed = false;
+    let bodyOverflow = '';
+
+    function setZoom(on) {
+        // clear any in-flight entry transform, it would distort the zoomed size
+        lbImage.classList.remove('zooming');
+        lbImage.style.transform = '';
+        lbImage.style.opacity = '';
+        zoomed = on;
+        lbStage.classList.toggle('zoomed', on);
+        lightbox.classList.toggle('is-zoomed', on);
+        if (lbZoom) {
+            lbZoom.setAttribute('aria-pressed', String(on));
+            lbZoom.querySelector('i').className = on
+                ? 'fas fa-magnifying-glass-minus' : 'fas fa-magnifying-glass-plus';
+            if (lbZoomLabel) lbZoomLabel.textContent = on ? 'Fit to screen' : 'Zoom in';
+        }
+        if (on) {
+            // start centred on the top of the document, which is where reading begins
+            lbStage.scrollLeft = Math.max(0, (lbStage.scrollWidth - lbStage.clientWidth) / 2);
+            lbStage.scrollTop = 0;
+        } else {
+            lbStage.scrollLeft = 0;
+            lbStage.scrollTop = 0;
+        }
+    }
+
+    if (lbZoom) lbZoom.addEventListener('click', e => { e.stopPropagation(); setZoom(!zoomed); });
+    lbImage.addEventListener('click', e => { e.stopPropagation(); setZoom(!zoomed); });
+
+    // drag to pan once zoomed
+    let panning = false, panX = 0, panY = 0, startL = 0, startT = 0;
+
+    lbStage.addEventListener('pointerdown', e => {
+        if (!zoomed || e.target !== lbImage) return;
+        panning = true;
+        panX = e.clientX; panY = e.clientY;
+        startL = lbStage.scrollLeft; startT = lbStage.scrollTop;
+        lbStage.classList.add('dragging');
+        lbStage.setPointerCapture(e.pointerId);
+    });
+
+    lbStage.addEventListener('pointermove', e => {
+        if (!panning) return;
+        e.preventDefault();
+        lbStage.scrollLeft = startL - (e.clientX - panX);
+        lbStage.scrollTop = startT - (e.clientY - panY);
+    });
+
+    const endPan = () => { panning = false; lbStage.classList.remove('dragging'); };
+    lbStage.addEventListener('pointerup', endPan);
+    lbStage.addEventListener('pointercancel', endPan);
 
     /* ---- FLIP filtering ---- */
     filters.forEach(btn => {
@@ -609,6 +664,7 @@ function initGallery() {
     function paint() {
         const item = active[index];
         if (!item) return;
+        if (zoomed) setZoom(false);
         lbImage.src = item.dataset.full;
         lbImage.alt = item.dataset.title;
         lbEra.textContent = item.dataset.era || '';
@@ -663,12 +719,14 @@ function initGallery() {
         paint();
         lightbox.classList.add('open');
         requestAnimationFrame(() => lightbox.classList.add('visible'));
+        bodyOverflow = document.body.style.overflow;
         document.body.style.overflow = 'hidden';
         zoomFrom(fromEl);
         document.getElementById('lbClose').focus();
     }
 
     function close() {
+        setZoom(false);
         lightbox.classList.remove('visible');
         setTimeout(() => {
             lightbox.classList.remove('open');
@@ -677,7 +735,8 @@ function initGallery() {
             lbImage.style.transform = '';
             lbImage.style.opacity = '';
         }, 300);
-        document.body.style.overflow = '';
+        // restore whatever the page had, never assume it was scrollable
+        document.body.style.overflow = bodyOverflow;
         if (lastFocus) lastFocus.focus();
     }
 
@@ -719,20 +778,26 @@ function initGallery() {
     document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); move(1); });
 
     lightbox.addEventListener('click', e => {
+        if (zoomed) return;
         if (e.target === lightbox || e.target.classList.contains('lb-stage')) close();
     });
 
     document.addEventListener('keydown', e => {
         if (!lightbox.classList.contains('open')) return;
-        if (e.key === 'Escape') close();
+        if (e.key === 'Escape') { if (zoomed) setZoom(false); else close(); }
+        else if (e.key === '+' || e.key === '=') setZoom(true);
+        else if (e.key === '-') setZoom(false);
+        else if (zoomed) return;                 // arrows pan the document instead
         else if (e.key === 'ArrowRight') move(1);
         else if (e.key === 'ArrowLeft') move(-1);
     });
 
     let touchX = null;
-    lightbox.addEventListener('touchstart', e => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    lightbox.addEventListener('touchstart', e => {
+        touchX = zoomed ? null : e.changedTouches[0].clientX;
+    }, { passive: true });
     lightbox.addEventListener('touchend', e => {
-        if (touchX === null) return;
+        if (touchX === null || zoomed) return;
         const dx = e.changedTouches[0].clientX - touchX;
         if (Math.abs(dx) > 50) move(dx < 0 ? 1 : -1);
         touchX = null;
