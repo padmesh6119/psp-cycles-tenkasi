@@ -3,7 +3,7 @@
 
    web3formsKey  Paste the free access key from https://web3forms.com here
                  (enter sathishpp74@gmail.com there, the key arrives by email).
-                 Until it is set, the form will not pretend to send — it routes
+                 Until it is set, the form will not pretend to send, it routes
                  people to WhatsApp instead.
    whatsapp      Shop number in international form, digits only.
    ------------------------------------------------------------------------- */
@@ -872,7 +872,7 @@ function initFormHandling() {
         if (waBtn) waBtn.remove();
         const actions = form.querySelector('.form-actions');
         if (actions) actions.classList.add('single');
-        console.warn('[contact] No Web3Forms key set — email disabled, form routes to WhatsApp. See CONTACT in script_pro.js.');
+        console.warn('[contact] No Web3Forms key set, email disabled, form routes to WhatsApp. See CONTACT in script_pro.js.');
     }
 
     form.addEventListener('submit', async e => {
@@ -897,12 +897,12 @@ function initFormHandling() {
                 headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
                 body: JSON.stringify({
                     access_key: CONTACT.web3formsKey,
-                    subject: 'Website enquiry — ' + (data.name || 'no name'),
+                    subject: 'Website enquiry: ' + (data.name || 'no name'),
                     from_name: 'P. S. Pichandi Chettiar website',
                     name: data.name,
                     email: data.email,
-                    phone: data.phone || '—',
-                    interest: data.interest || '—',
+                    phone: data.phone || ', ',
+                    interest: data.interest || ', ',
                     message: data.message
                 })
             });
@@ -910,7 +910,7 @@ function initFormHandling() {
             const out = await res.json().catch(() => ({}));
 
             if (res.ok && out.success) {
-                showNotification('Thank you — your message has reached us. We will reply shortly.', 'success');
+                showNotification('Thank you, your message has reached us. We will reply shortly.', 'success');
                 form.reset();
             } else {
                 throw new Error(out.message || 'Request failed');
