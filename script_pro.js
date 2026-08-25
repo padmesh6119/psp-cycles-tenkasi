@@ -182,9 +182,6 @@ function initHero() {
     };
     drift();
 
-    const style = document.createElement('style');
-    style.textContent = '.hero::before{transform:scale(var(--hero-scale,1.08)) translate3d(0,calc(var(--hero-p,0) * 60px),0)}';
-    document.head.appendChild(style);
 }
 
 /* ------------------------------ Scroll progress -------------------------- */
@@ -860,6 +857,15 @@ function initFormHandling() {
     const form = document.getElementById('contactForm');
     if (!form) return;
 
+    /* Abuse controls. A static site has no server of its own, so these stop
+       bots and accidental repeats, not a determined attacker posting straight
+       to the endpoint — that is Web3Forms' own rate limiting and the allowed-
+       domain setting in their dashboard. */
+    const MIN_FILL_MS = 3000;    // humans take longer than this to fill a form
+    const COOLDOWN_MS = 30000;   // one message per half minute from this browser
+    const openedAt = Date.now();
+    let lastSent = Number(sessionStorage.getItem('psp:lastSent') || 0) || 0;
+
     const submitBtn = document.getElementById('formSubmit');
     const waBtn = document.getElementById('formWhatsapp');
     const configured = Boolean(CONTACT.web3formsKey);
@@ -880,6 +886,18 @@ function initFormHandling() {
         const data = Object.fromEntries(new FormData(form));
 
         if (data.botcheck) return;                       // spam trap tripped
+
+        if (Date.now() - openedAt < MIN_FILL_MS) {       // submitted too fast to be typed
+            showNotification('Please take a moment to complete the form.', 'error');
+            return;
+        }
+
+        const since = Date.now() - lastSent;
+        if (since < COOLDOWN_MS) {
+            const wait = Math.ceil((COOLDOWN_MS - since) / 1000);
+            showNotification(`You have just sent a message. Please wait ${wait} seconds, or call +91 98654 88055.`, 'error');
+            return;
+        }
 
         if (!validateForm(data)) {
             showNotification('Please fill in your name, a valid email, and a message.', 'error');
@@ -910,6 +928,8 @@ function initFormHandling() {
             const out = await res.json().catch(() => ({}));
 
             if (res.ok && out.success) {
+                lastSent = Date.now();
+                try { sessionStorage.setItem('psp:lastSent', String(lastSent)); } catch (_) {}
                 showNotification('Thank you, your message has reached us. We will reply shortly.', 'success');
                 form.reset();
             } else {
@@ -936,6 +956,7 @@ function initFormHandling() {
 /* Hands the enquiry to WhatsApp with everything already typed out. */
 function sendToWhatsApp(form) {
     const d = Object.fromEntries(new FormData(form));
+    if (d.botcheck) return;
     const interest = form.querySelector('#interest');
     const interestLabel = interest && interest.selectedIndex > 0
         ? interest.options[interest.selectedIndex].text
